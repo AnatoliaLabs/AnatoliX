@@ -179,7 +179,20 @@ jobs:
           - ports/chromebook/x86_64/gnome
           - ports/chromebook/x86_64/plasma
           - ports/chromebook/x86_64/xfce
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
+          - ports/surface/flagship-live
+          - ports/surface/gnome-live
+          - ports/surface/plasma-live
+          - ports/surface/xfce-live
+        exclude:
+          - arch: aarch64
+            variant: ports/surface/flagship-live
+          - arch: aarch64
+            variant: ports/surface/gnome-live
+          - arch: aarch64
+            variant: ports/surface/plasma-live
+          - arch: aarch64
+            variant: ports/surface/xfce-live
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
