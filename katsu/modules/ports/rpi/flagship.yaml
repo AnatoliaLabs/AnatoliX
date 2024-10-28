@@ -2,8 +2,8 @@ builder: dnf
 
 import:
   - rpi.yaml
-  - ../../../flagship/flagship.yaml
-  - ../../../flagship/base-disk-aarch64.yaml
+  - ../../flagship/flagship.yaml
+  - ../../flagship/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 Flagship (Raspberry Pi)
 
