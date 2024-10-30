@@ -8,3 +8,5 @@ dnf:
     - iptsd
     - libwacom-surface
     - kernel-surface-devel
+    - ultramarine-release-surface
+    - surface-dtx-daemon
