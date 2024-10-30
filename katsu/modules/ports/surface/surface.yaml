@@ -10,3 +10,8 @@ dnf:
     - kernel-surface-devel
     - ultramarine-release-surface
     - surface-dtx-daemon
+
+  exclude:
+    - kernel
+    - kernel-core
+    - kernel-devel
