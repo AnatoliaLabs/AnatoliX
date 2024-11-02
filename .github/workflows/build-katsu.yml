@@ -16,11 +16,6 @@ env:
     grub2-efi
     uboot-images-armv8
     uboot-tools
-    qemu-user-static-aarch64
-    qemu-user-binfmt
-    qemu-kvm
-    qemu-img
-    systemd-devel
     mkpasswd
     squashfs-tools
     erofs-utils
