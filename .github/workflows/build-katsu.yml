@@ -28,6 +28,7 @@ env:
     grub2-tools-extra
     isomd5sum
     katsu
+    policycoreutils
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm
 
