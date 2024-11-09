@@ -7,9 +7,9 @@ dnf:
   releasever: 40
   arch: aarch64
   packages:
-    - kernel-sc7180
-    - kernel-sc7180-devel
-    - msm-cros-efs-loader
+    - kernel-mt8183
+    - kernel-mt8183-devel
+    - ultramarine-backgrounds
 
 disk:
   size: 16GB

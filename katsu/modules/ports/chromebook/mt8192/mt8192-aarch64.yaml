@@ -9,6 +9,7 @@ dnf:
   packages:
     - kernel-mt8192
     - kernel-mt8192-devel
+    - ultramarine-backgrounds
 
 disk:
   size: 16GB
