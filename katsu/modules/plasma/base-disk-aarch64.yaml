@@ -1,5 +1,5 @@
 builder: dnf
-distro: Ultramarine Linux 41
+distro: Ultramarine Linux 41 (Plasma Edition)
 
 # users:
 #   - username: ultramarine
@@ -9,28 +9,19 @@ distro: Ultramarine Linux 41
 #       - wheel
 
 import:
-  - base.yaml
-  - base-disk.yaml
+  - ../base/base.yaml
+  - ../base/base-disk.yaml
+  - plasma.yaml
+  - plasma-disk.yaml
 
-dnf:
-  releasever: 41
-  exec: dnf4
-  arch: aarch64
-  packages:
-    - ultramarine-release-identity-basic
-    - ultramarine-release-basic
 scripts:
   post:
     - id: grub
       name: Set up GRUB
-      file: grub-setup.sh
-    - id: multi-user
-      priority: 60
-      name: Set default target to multi-user
-      file: default-target.sh
+      file: ../base/grub-setup.sh
 
 disk:
-  size: 8GB
+  size: 15GB
   partitions:
     - label: EFI
       type: esp
@@ -51,3 +42,8 @@ disk:
       # size: 2.5MB
       filesystem: ext4
       mountpoint: /
+
+dnf:
+  releasever: 41
+  exec: dnf4
+  arch: aarch64
