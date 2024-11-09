@@ -4,7 +4,7 @@ import:
   - ../chromebook.yaml
 
 dnf:
-  releasever: 40
+  releasever: 41
   arch: x86_64
   packages:
     - kernel-stoney

@@ -14,4 +14,4 @@ bootloader: grub
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 40
+  releasever: 41
