@@ -1,4 +1,0 @@
-dnf:
-  releasever: 40
-  packages:
-    - initial-setup-gui-wayland-plasma # Use KWin version of initial-setup

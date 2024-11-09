@@ -1,5 +1,0 @@
-dnf:
-  releasever: 40
-  packages:
-    #beta - still need to set up our own comps
-    - "@ultramarine-kde-product-environment"
