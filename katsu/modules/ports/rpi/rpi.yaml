@@ -22,4 +22,5 @@ dnf:
   packages:
     - kernel-rpi
     - linux-firmware-rpi
+    - rpi-utils
     - uboot
