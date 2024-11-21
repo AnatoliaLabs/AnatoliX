@@ -58,6 +58,7 @@ jobs:
           - x86_64
           - aarch64
         variant:
+          # generic efi
           - base/base-disk
           - flagship/base-disk
           - gnome/base-disk
@@ -79,7 +80,14 @@ jobs:
           - ports/chromebook/sc7180/gnome
           - ports/chromebook/sc7180/plasma
           - ports/chromebook/sc7180/xfce
-          # TODO: figure out how to get loop devices to work on our ARM runners
+          - ports/rpi4/flagship
+          - ports/rpi4/gnome
+          - ports/rpi4/plasma
+          - ports/rpi4/xfce
+          - ports/rpi5/flagship
+          - ports/rpi5/gnome
+          - ports/rpi5/plasma
+          - ports/rpi5/xfce
         exclude:
           - arch: aarch64
             variant: ports/chromebook/x86_64/flagship
@@ -113,6 +121,22 @@ jobs:
             variant: ports/chromebook/sc7180/plasma
           - arch: x86_64
             variant: ports/chromebook/sc7180/xfce
+          - arch: x86_64
+            variant: ports/rpi4/flagship
+          - arch: x86_64
+            variant: ports/rpi4/gnome
+          - arch: x86_64
+            variant: ports/rpi4/plasma
+          - arch: x86_64
+            variant: ports/rpi4/xfce
+          - arch: x86_64
+            variant: ports/rpi5/flagship
+          - arch: x86_64
+            variant: ports/rpi5/gnome
+          - arch: x86_64
+            variant: ports/rpi5/plasma
+          - arch: x86_64
+            variant: ports/rpi5/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
