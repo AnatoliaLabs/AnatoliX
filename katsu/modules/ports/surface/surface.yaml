@@ -14,4 +14,4 @@ dnf:
   exclude:
     - kernel
     - kernel-core
-    - kernel-devel
+    - kernel-devel*
