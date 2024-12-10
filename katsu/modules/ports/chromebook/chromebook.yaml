@@ -19,6 +19,7 @@ scripts:
       file: ../../base/grub-setup.sh
 dnf:
   releasever: 41
+  repodir: ../../base/repodir
   packages:
     - cros-keyboard-map
     - depthcharge-tools
