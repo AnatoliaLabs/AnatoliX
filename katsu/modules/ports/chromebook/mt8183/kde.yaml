@@ -2,14 +2,14 @@ builder: dnf
 
 import:
   - mt8183.yaml
-  - ../../../kde/kde.yaml
-  - ../../../kde/kde-disk.yaml
+  - ../../../plasma/plasma.yaml
+  - ../../../plasma/plasma-disk.yaml
   - ../../../base/base.yaml
   - ../../../base/base-disk-nokernel.yaml
 
-distro: Ultramarine Linux 40 KDE (mt8183 Chromebook)
+distro: Ultramarine Linux 41 KDE (mt8183 Chromebook)
 
-out_file: ultramarine-cbe-mt8183-kde-40.img
+out_file: ultramarine-cbe-mt8183-kde-41.img
 
 bootloader: grub
 

@@ -1,8 +1,8 @@
 builder: dnf
 import:
   - mt8192.yaml
-  - ../../../kde/kde.yaml
-  - ../../../kde/kde-disk.yaml
+  - ../../../plasma/plasma.yaml
+  - ../../../plasma/plasma-disk.yaml
   - ../../../base/base.yaml
   - ../../../base/base-disk-nokernel.yaml
 

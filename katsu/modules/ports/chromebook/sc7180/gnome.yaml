@@ -2,14 +2,14 @@ builder: dnf
 
 import:
   - sc7180-aarch64.yaml
-  - ../../../plasma/plasma.yaml
-  - ../../../plasma/plasma-disk.yaml
+  - ../../../gnome/gnome.yaml
+  - ../../../gnome/base-disk-aarch64.yaml
   - ../../../base/base.yaml
   - ../../../base/base-disk-nokernel.yaml
 
 distro: Ultramarine Linux 41 KDE (sc7180 Chromebook)
 
-out_file: ultramarine-cbe-sc7180-kde-41.img
+out_file: ultramarine-cbe-sc7180-gnome-41.img
 
 bootloader: grub
 

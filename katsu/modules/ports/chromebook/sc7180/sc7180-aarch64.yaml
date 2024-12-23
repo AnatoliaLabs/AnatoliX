@@ -11,6 +11,7 @@ dnf:
     - kernel-sc7180-devel
     - terra-msm-cros-efs-loader
     - ultramarine-backgrounds
+    - linux-firmware-trogdor
 
 disk:
   size: 16GB
