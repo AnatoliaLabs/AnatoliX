@@ -7,9 +7,9 @@ import:
   - ../../../base/base.yaml
   - ../../../base/base-disk-nokernel.yaml
 
-distro: Ultramarine Linux 40 KDE (aarch64 Chromebook)
+distro: Ultramarine Linux 41 KDE (aarch64 Chromebook)
 
-out_file: ultramarine-cbe-aarch64-kde-40.img
+out_file: ultramarine-cbe-aarch64-kde-41.img
 
 bootloader: grub
 
