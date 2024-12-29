@@ -9,13 +9,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # arch:
-        #   - x86_64
-        #   - aarch64
         variants:
           - name: gnome
 
-    uses: ./.github/workflows/katsu.yml
+    uses: ./.github/workflows/calls/katsu.yml
     with:
       #   arch: ${{ matrix.arch }}
       variant: ${{ matrix.variants.name }}
