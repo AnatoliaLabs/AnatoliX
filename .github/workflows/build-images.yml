@@ -13,12 +13,10 @@ jobs:
           - aarch64
         variants:
           - name: gnome
-            format:
-              - diskimg
-              - live-iso
+            includes: "live-iso,base-disk"
 
     uses: ./.github/workflows/katsu.yml
     with:
       arch: ${{ matrix.arch }}
       variant: ${{ matrix.variants.name }}
-      mode: ${{ matrix.variants.format }}
+      include: ${{ matrix.variants.includes }}

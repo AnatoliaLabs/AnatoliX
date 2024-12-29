@@ -82,17 +82,33 @@ on:
         type: string
         description: "Variant to build"
 
-      mode:
-        required: true
+      include:
+        required: false
         type: string
-        description: "Format to build"
+        description: "include a specific type from the build, comma separated"
 
 jobs:
+  parse_includes:
+    runs-on: ubuntu-latest
+    outputs:
+      include: ${{ steps.set_includes.outputs.includes }}
+    steps:
+      - name: Set includes
+        id: set_includes
+        run: |
+          if [ -n "${{ inputs.include }}" ]; then
+                  include=$(echo ${{ inputs.include }} | sed 's/,/ /g')
+                  echo "includes=$(jq -nc --arg includes "$include" '$includes | split(" ")')" >> $GITHUB_ENV
+          else
+                  echo "includes=[]" >> $GITHUB_ENV
+          fi
+
   diskimg:
+    needs: parse_includes
     strategy:
       fail-fast: false
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
-    if: ${{ inputs.mode == 'diskimg' }}
+    if: ${{ contains(fromJson(needs.parse_includes.outputs.include), 'diskimg') }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       options: --privileged -v /dev:/dev
@@ -135,10 +151,11 @@ jobs:
           compression-level: 0
 
   live-iso:
+    needs: parse_includes
     strategy:
       fail-fast: false
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
-    if: ${{ inputs.mode == 'live-iso' }}
+    if: ${{ contains(fromJson(needs.parse_includes.outputs.include), 'live-iso') }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       options: --privileged -v /dev:/dev
