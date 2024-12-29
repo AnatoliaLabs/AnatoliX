@@ -12,7 +12,7 @@ jobs:
         variants:
           - name: gnome
 
-    uses: ./.github/workflows/calls/katsu.yml
+    uses: ./.github/workflows/katsu.yml
     with:
       #   arch: ${{ matrix.arch }}
       variant: ${{ matrix.variants.name }}

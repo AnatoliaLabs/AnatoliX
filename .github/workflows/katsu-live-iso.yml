@@ -85,7 +85,6 @@ on:
 
 jobs:
   live-iso:
-    needs: parse_includes
     strategy:
       matrix:
         arch: [x86_64, aarch64]
