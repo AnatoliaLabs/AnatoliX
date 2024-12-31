@@ -10,6 +10,14 @@ dnf:
     - kernel-surface-devel
     - ultramarine-release-surface
     - surface-dtx-daemon
+    # Below for camera support
+    - intel-vsc-firmware
+    - libcamera
+    - libcamera-tools
+    - libcamera-qcam
+    - libcamera-gstreamer
+    - libcamera-ipa
+    - pipewire-plugin-libcamera
 
   exclude:
     - kernel
