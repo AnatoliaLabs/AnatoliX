@@ -15,7 +15,9 @@ scripts:
     - id: submarine
       name: Set up ChromeOS bootloader
       file: submarine.sh
-
+    - id: readymade
+      name: Setup Readymade
+      file: readymade.sh
 dnf:
   releasever: 41
   exec: dnf4
