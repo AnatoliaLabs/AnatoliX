@@ -6,6 +6,7 @@ import:
 dnf:
   releasever: 41
   exec: dnf4
+  arch: aarch64
   packages:
     - kernel-sc7180
     - kernel-sc7180-devel
