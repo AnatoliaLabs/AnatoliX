@@ -121,7 +121,6 @@ jobs:
             variant: ports/chromebook/sc7180/plasma
           - arch: x86_64
             variant: ports/chromebook/sc7180/xfce
-          - arch: x86_64
             variant: ports/rpi4/flagship
           - arch: x86_64
             variant: ports/rpi4/gnome
