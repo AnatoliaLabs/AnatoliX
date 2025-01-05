@@ -1,13 +1,13 @@
 builder: dnf
 
 import:
-  - rpi.yaml
+  - rpi4.yaml
   - ../../gnome/gnome.yaml
   - ../../gnome/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 GNOME (Raspberry Pi)
+distro: Ultramarine Linux 41 GNOME (Raspberry Pi 4)
 
-out_file: ultramarine-rpi-gnome-41.img
+out_file: ultramarine-rpi4-gnome-41.img
 
 bootloader: grub
 

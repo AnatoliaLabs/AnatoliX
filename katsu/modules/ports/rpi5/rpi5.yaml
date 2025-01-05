@@ -1,0 +1,26 @@
+builder: dnf
+
+scripts:
+  post:
+    - id: cleanup
+      name: Clean up system
+      file: ../../base/cleanup.sh
+    - id: selinux-setup
+      name: Set up SELinux
+      file: ../../base/selinux.sh
+      chroot: false
+    - id: buildstamp
+      name: Generate buildstamp
+      file: ../../base/buildstamp.sh
+    - id: uboot
+      name: Install Raspberry Pi uboot
+      file: uboot.sh
+
+dnf:
+  releasever: 41
+  exec: dnf4
+  packages:
+    - ultramarine-repos-rpi
+    - kernel
+    - rpi-utils
+    - uboot

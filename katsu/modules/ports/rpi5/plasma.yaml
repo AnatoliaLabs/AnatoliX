@@ -1,13 +1,13 @@
 builder: dnf
 
 import:
-  - rpi.yaml
+  - rpi5.yaml
   - ../../plasma/plasma.yaml
   - ../../plasma/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 Plasma (Raspberry Pi)
+distro: Ultramarine Linux 41 Plasma (Raspberry Pi 5)
 
-out_file: ultramarine-rpi-plasma-41.img
+out_file: ultramarine-rpi5-plasma-41.img
 
 bootloader: grub
 

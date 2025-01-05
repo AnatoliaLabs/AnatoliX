@@ -20,7 +20,7 @@ dnf:
   releasever: 41
   exec: dnf4
   packages:
-    - kernel-rpi
-    - linux-firmware-rpi
+    - ultramarine-repos-rpi
+    - kernel-rpi4
     - rpi-utils
     - uboot

@@ -1,0 +1,18 @@
+builder: dnf
+
+import:
+  - rpi4.yaml
+  - ../../flagship/flagship.yaml
+  - ../../flagship/base-disk-aarch64.yaml
+
+distro: Ultramarine Linux 41 Flagship (Raspberry Pi 4)
+
+out_file: ultramarine-rpi4-flagship-41.img
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+dnf:
+  releasever: 41
+  exec: dnf4

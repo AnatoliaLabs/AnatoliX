@@ -1,13 +1,13 @@
 builder: dnf
 
 import:
-  - rpi.yaml
+  - rpi5.yaml
   - ../../flagship/flagship.yaml
   - ../../flagship/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 Flagship (Raspberry Pi)
+distro: Ultramarine Linux 41 Flagship (Raspberry Pi 5)
 
-out_file: ultramarine-rpi-flagship-41.img
+out_file: ultramarine-rpi5-flagship-41.img
 
 bootloader: grub
 
