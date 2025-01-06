@@ -63,20 +63,56 @@ jobs:
           - gnome/base-disk
           - plasma/base-disk
           - xfce/base-disk
-          #- ports/chromebook/flagship
-          #- ports/chromebook/gnome
-          #- ports/chromebook/plasma
-          #- ports/chromebook/xfce
+          - ports/chromebook/x86_64/flagship
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
+          - ports/chromebook/mt8183/flagship
+          - ports/chromebook/mt8183/gnome
+          - ports/chromebook/mt8183/plasma
+          - ports/chromebook/mt8183/xfce
+          - ports/chromebook/mt8192/flagship
+          - ports/chromebook/mt8192/gnome
+          - ports/chromebook/mt8192/plasma
+          - ports/chromebook/mt8192/xfce
+          - ports/chromebook/sc7180/flagship
+          - ports/chromebook/sc7180/gnome
+          - ports/chromebook/sc7180/plasma
+          - ports/chromebook/sc7180/xfce
           # TODO: figure out how to get loop devices to work on our ARM runners
         exclude:
           - arch: aarch64
-            variant: flagship/flagship-chromebook
+            variant: ports/chromebook/x86_64/flagship
           - arch: aarch64
-            variant: gnome/gnome-chromebook
+            variant: ports/chromebook/x86_64/gnome
           - arch: aarch64
-            variant: plasma/plasma-chromebook
+            variant: ports/chromebook/x86_64/plasma
           - arch: aarch64
-            variant: xfce/xfce-chromebook
+            variant: ports/chromebook/x86_64/xfce
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/flagship
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/gnome
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/plasma
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/xfce
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/flagship
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/gnome
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/plasma
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/xfce
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/flagship
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/gnome
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/plasma
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
@@ -139,6 +175,10 @@ jobs:
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
           - xfce/xfce-live-anaconda
+          - ports/chromebook/x86_64/flagship
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
