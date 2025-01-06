@@ -23,4 +23,4 @@ dnf:
     - ultramarine-repos-rpi
     - kernel
     - rpi-utils
-    - uboot
+    - uboot-images-armv8
