@@ -1,13 +1,13 @@
 builder: dnf
 
 import:
-  - mt8192.yaml
+  - mt8183-aarch64.yaml
   - ../../../gnome/gnome.yaml
   - ../../../gnome/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 GNOME (mt8192 Chromebook)
+distro: Ultramarine Linux 41 GNOME (mt8183 Chromebook)
 
-out_file: ultramarine-cbe-mt8192-gnome-41.img
+out_file: ultramarine-cbe-mt8183-gnome-41.img
 
 bootloader: grub
 

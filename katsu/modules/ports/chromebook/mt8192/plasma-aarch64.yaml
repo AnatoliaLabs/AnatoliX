@@ -1,7 +1,7 @@
 builder: dnf
 
 import:
-  - mt8192.yaml
+  - mt8192-aarch64.yaml
   - ../../../plasma/plasma.yaml
   - ../../../plasma/base-disk-aarch64.yaml
 

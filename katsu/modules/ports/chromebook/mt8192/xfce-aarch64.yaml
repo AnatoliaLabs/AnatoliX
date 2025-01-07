@@ -1,13 +1,13 @@
 builder: dnf
 
 import:
-  - sc7180.yaml
+  - mt8192-aarch64.yaml
   - ../../../xfce/xfce.yaml
   - ../../../xfce/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 Xfce (sc7180 Chromebook)
+distro: Ultramarine Linux 41 Xfce (mt8192 Chromebook)
 
-out_file: ultramarine-cbe-sc7180-xfce-41.img
+out_file: ultramarine-cbe-mt8192-xfce-41.img
 
 bootloader: grub
 
