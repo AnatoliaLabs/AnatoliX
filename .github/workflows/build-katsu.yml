@@ -63,23 +63,22 @@ jobs:
           - gnome/base-disk
           - plasma/base-disk
           - xfce/base-disk
-          - ports/chromebook/chromebook
-          #- ports/chromebook/x86_64/flagship
-          #- ports/chromebook/x86_64/gnome
-          #- ports/chromebook/x86_64/plasma
-          #- ports/chromebook/x86_64/xfce
-          #- ports/chromebook/mt8183/flagship
-          #- ports/chromebook/mt8183/gnome
-          #- ports/chromebook/mt8183/plasma
-          #- ports/chromebook/mt8183/xfce
-          #- ports/chromebook/mt8192/flagship
-          #- ports/chromebook/mt8192/gnome
-          #- ports/chromebook/mt8192/plasma
-          #- ports/chromebook/mt8192/xfce
-          #- ports/chromebook/sc7180/flagship
-          #- ports/chromebook/sc7180/gnome
-          #- ports/chromebook/sc7180/plasma
-          #- ports/chromebook/sc7180/xfce
+          - ports/chromebook/x86_64/flagship
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
+          - ports/chromebook/mt8183/flagship
+          - ports/chromebook/mt8183/gnome
+          - ports/chromebook/mt8183/plasma
+          - ports/chromebook/mt8183/xfce
+          - ports/chromebook/mt8192/flagship
+          - ports/chromebook/mt8192/gnome
+          - ports/chromebook/mt8192/plasma
+          - ports/chromebook/mt8192/xfce
+          - ports/chromebook/sc7180/flagship
+          - ports/chromebook/sc7180/gnome
+          - ports/chromebook/sc7180/plasma
+          - ports/chromebook/sc7180/xfce
           # TODO: figure out how to get loop devices to work on our ARM runners
         exclude:
           - arch: aarch64
