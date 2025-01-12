@@ -79,6 +79,10 @@ jobs:
           - ports/chromebook/sc7180/gnome
           - ports/chromebook/sc7180/plasma
           - ports/chromebook/sc7180/xfce
+          - ports/chromebook/stoney/flagship
+          - ports/chromebook/stoney/gnome
+          - ports/chromebook/stoney/plasma
+          - ports/chromebook/stoney/xfce
           # TODO: figure out how to get loop devices to work on our ARM runners
         exclude:
           - arch: aarch64
@@ -89,6 +93,14 @@ jobs:
             variant: ports/chromebook/x86_64/plasma
           - arch: aarch64
             variant: ports/chromebook/x86_64/xfce
+          - arch: aarch64
+            variant: ports/chromebook/stoney/flagship
+          - arch: aarch64
+            variant: ports/chromebook/stoney/gnome
+          - arch: aarch64
+            variant: ports/chromebook/stoney/plasma
+          - arch: aarch64
+            variant: ports/chromebook/stoney/xfce
           - arch: x86_64
             variant: ports/chromebook/mt8183/flagship
           - arch: x86_64
@@ -179,6 +191,10 @@ jobs:
           - ports/chromebook/x86_64/gnome
           - ports/chromebook/x86_64/plasma
           - ports/chromebook/x86_64/xfce
+          - ports/chromebook/stoney/flagship
+          - ports/chromebook/stoney/gnome
+          - ports/chromebook/stoney/plasma
+          - ports/chromebook/stoney/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
