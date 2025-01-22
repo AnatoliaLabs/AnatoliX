@@ -15,3 +15,6 @@ dnf:
     - ibus-hangul
     - ibus-libpinyin
     - ibus-typing-booster
+    # idk why this is pulled in
+    - gsettings-desktop-schemas
+    - anthy

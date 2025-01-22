@@ -6,8 +6,13 @@ dnf:
     - langpacks-*
     - default-fonts-*
     # remove broken imsettings
-    - imsettings
     - im-chooser
+    # Experiementally remove the following packages
+    # I have no idea why they are pulled in
+    - qemu*
+    - llvm*-libs
+    - clang*-libs
+    - cpp
   packages:
     - readymade
     - taidan
