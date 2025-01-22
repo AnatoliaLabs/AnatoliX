@@ -10,7 +10,6 @@ dnf:
     # Experiementally remove the following packages
     # I have no idea why they are pulled in
     - qemu*
-    - clang*-libs
   packages:
     - readymade
     - taidan
