@@ -1,6 +1,15 @@
 dnf:
   releasever: 41
   exec: dnf4
+  excludes:
+    # use ultramarine-langpacks
+    - langpacks-*
+    - default-fonts-*
+    # remove broken imsettings
+    - imsettings
+    - im-chooser
   packages:
     - readymade
     - taidan
+    - ultramarine-langpacks-core-en
+    - ultramarine-langpacks-fonts-en
