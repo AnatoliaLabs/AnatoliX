@@ -1,0 +1,29 @@
+builder: dnf
+
+import:
+  - ../chromebook.yaml
+  - ../../../flagship/flagship-live.yaml
+  - ../../../flagship/base-disk-x86_64.yaml
+  - ../../../live/readymade.yaml
+  - ../../../live/live.yaml
+
+distro: Ultramarine Linux 41 Flagship (Chromebook Edition)
+
+out_file: ultramarine-cbe-flagship-41.iso
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+iso:
+  volume_id: UM-Flagship-Live
+
+scripts:
+  post:
+    - id: flagship-live
+      name: Set up Flagship Live
+      file: ../../../flagship/flagship-live.sh
+
+dnf:
+  releasever: 41
+  exec: dnf4

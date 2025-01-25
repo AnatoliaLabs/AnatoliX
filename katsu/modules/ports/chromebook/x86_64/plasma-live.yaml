@@ -1,0 +1,29 @@
+builder: dnf
+
+import:
+  - ../chromebook.yaml
+  - ../../../plasma/plasma-live.yaml
+  - ../../../plasma/base-disk-x86_64.yaml
+  - ../../../live/readymade.yaml
+  - ../../../live/live.yaml
+
+distro: Ultramarine Linux 41 Plasma (Chromebook Edition)
+
+out_file: ultramarine-cbe-plasma-41.iso
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+iso:
+  volume_id: UM-Plasma-Live
+
+scripts:
+  post:
+    - id: plasma-live
+      name: Set up Plasma Live
+      file: ../../../plasma/plasma-live.sh
+
+dnf:
+  releasever: 41
+  exec: dnf4

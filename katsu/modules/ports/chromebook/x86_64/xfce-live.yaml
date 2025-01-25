@@ -1,0 +1,29 @@
+builder: dnf
+
+import:
+  - ../chromebook.yaml
+  - ../../../xfce/xfce-live.yaml
+  - ../../../xfce/base-disk-x86_64.yaml
+  - ../../../live/readymade.yaml
+  - ../../../live/live.yaml
+
+distro: Ultramarine Linux 41 Xfce (Chromebook Edition)
+
+out_file: ultramarine-cbe-xfce-41.iso
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+iso:
+  volume_id: UM-XFCE-Live
+
+scripts:
+  post:
+    - id: xfce-live
+      name: Set up XFCE Live
+      file: ../../../xfce/xfce-live.sh
+
+dnf:
+  releasever: 41
+  exec: dnf4
