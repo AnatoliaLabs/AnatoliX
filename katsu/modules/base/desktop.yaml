@@ -1,8 +1,8 @@
 scripts:
-  # post:
-  #   - id: polycrystal
-  #     name: Install Flatpaks via Polycrystal
-  #     file: polycrystal.sh
+  post:
+    - id: polycrystal
+      name: Install Flatpaks via Polycrystal
+      file: polycrystal.sh
 
 dnf:
   releasever: 41
