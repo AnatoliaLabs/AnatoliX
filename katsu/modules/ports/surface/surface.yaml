@@ -9,7 +9,7 @@ dnf:
     - libwacom-surface
     - kernel-surface-devel
     - ultramarine-release-surface
-    - surface-dtx-daemon
+    - terra-surface-dtx-daemon
     # Below for camera support
     - intel-vsc-firmware
     - libcamera
