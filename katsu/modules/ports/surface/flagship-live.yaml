@@ -1,8 +1,8 @@
 builder: dnf
 
 import:
-  - ../../../base/base.yaml
-  - ../../../live/live.yaml
+  - ../../base/base.yaml
+  - ../../live/live.yaml
   - ../../flagship/flagship.yaml
   - surface.yaml
 
