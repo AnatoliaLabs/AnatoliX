@@ -10,6 +10,9 @@ cleanup() {
     done
     umount /mnt/mock-mount
     umount /mnt/mock-mount
+    # HACK: /github is created for some reason when katsu is run in GitHub Actions
+    # I'm not sure why, I think it has to do with the default github user used, and flatpak creating the xdg dirs
+    rm -rf /mnt/mock-mount /run/mount /github
 }
 
 if [ -x "$(command -v polycrystal)" ]; then
