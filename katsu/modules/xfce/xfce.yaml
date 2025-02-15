@@ -1,9 +1,3 @@
-scripts:
-  post:
-    - id: xfce
-      name: Extra XFCE setup
-      file: ./xfce-extra.sh
-
 dnf:
   releasever: 41
   exec: dnf4

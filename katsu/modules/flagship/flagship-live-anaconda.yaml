@@ -3,26 +3,28 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
-  - ../base/desktop.yaml
-  - ../live/readymade.yaml
+  - ../live/anaconda.yaml
   - flagship.yaml
 
 distro: Ultramarine Linux 41 (Flagship Edition)
 
-out_file: ultramarine-flagship-41-live.iso
+out_file: ultramarine-flagship-41-live-anaconda.iso
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 iso:
-  volume_id: UM-Flagship-Live
+  volume_id: UM-Flagship-Live-Anaconda
 
 scripts:
   post:
     - id: flagship-live
       name: Set up Flagship Live
       file: ./flagship-live.sh
+    - id: flagship-live-anaconda
+      name: Set up Flagship Live (for Anaconda)
+      file: ./flagship-live-anaconda.sh
 
 dnf:
   releasever: 41

@@ -3,26 +3,28 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
-  - ../base/desktop.yaml
-  - ../live/readymade.yaml
+  - ../live/anaconda.yaml
   - gnome.yaml
 
 distro: Ultramarine GNOME 41
 
-out_file: ultramarine-gnome-41-live.iso
+out_file: ultramarine-gnome-41-live-anaconda.iso
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 iso:
-  volume_id: UM-Gn-Live
+  volume_id: UM-Gn-Live-Anaconda
 
 scripts:
   post:
     - id: gnome-live
       name: Set up GNOME Live
       file: gnome-live.sh
+    - id: gnome-live-anaconda
+      name: Set up GNOME Live (for Anaconda)
+      file: gnome-live-anaconda.sh
 
 dnf:
   releasever: 41

@@ -11,6 +11,7 @@ distro: Ultramarine Linux 41 (Xfce Edition)
 import:
   - ../base/base.yaml
   - ../base/base-disk.yaml
+  - ../base/desktop.yaml
   - xfce.yaml
 
 scripts:
@@ -20,7 +21,7 @@ scripts:
       file: ../base/grub-setup.sh
 
 disk:
-  size: 11GB
+  size: 14GB
   partitions:
     - label: EFI
       type: esp

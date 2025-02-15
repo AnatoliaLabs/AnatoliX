@@ -3,26 +3,28 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
-  - ../base/desktop.yaml
-  - ../live/readymade.yaml
+  - ../live/anaconda.yaml
   - plasma.yaml
 
 distro: Ultramarine Linux 41 (Plasma Edition)
 
-out_file: ultramarine-plasma-41-live.iso
+out_file: ultramarine-plasma-41-live-anaconda.iso
 
 scripts:
   post:
     - id: plasma-live
       name: Set up Plasma Live
       file: ./plasma-live.sh
+    - id: plasma-live-anaconda
+      name: Set up Plasma Live (for Anaconda)
+      file: ./plasma-live-anaconda.sh
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 iso:
-  volume_id: UM-Kd-Live
+  volume_id: UM-Kd-Live-Anaconda
 
 dnf:
   releasever: 41

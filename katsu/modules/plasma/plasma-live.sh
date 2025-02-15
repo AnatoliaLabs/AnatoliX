@@ -14,8 +14,3 @@ EOF
 
 # set livesys session type
 sed -i 's/^livesys_session=.*/livesys_session="kde"/' /etc/sysconfig/livesys
-
-cat >>/var/lib/livesys/livesys-session-extra <<ALLEOF
-# Install welcome screen
-sed -i 's/Fedora/Ultramarine/g' /usr/share/anaconda/gnome/fedora-welcome
-ALLEOF

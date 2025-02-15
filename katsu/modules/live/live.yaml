@@ -15,17 +15,12 @@ dnf:
     - gnome-boxes
     - deepin-wallpapers
   packages:
-    - python3-umstellar
     - glibc-all-langpacks
     - dracut-config-generic
     - dracut-live
     - dracut-config-generic
     - dracut-network
     - dracut-squash
-    - anaconda-dracut
-    - anaconda-live
-    - anaconda-install-env-deps
-    - "@anaconda-tools"
     - libblockdev-nvdimm
     - isomd5sum
     - orca

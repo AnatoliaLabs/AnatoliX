@@ -3,20 +3,19 @@ builder: dnf
 import:
   - ../base/base.yaml
   - ../live/live.yaml
-  - ../base/desktop.yaml
-  - ../live/readymade.yaml
+  - ../live/anaconda.yaml
   - xfce.yaml
 
 distro: Ultramarine Linux 41 (Xfce Edition)
 
-out_file: ultramarine-xfce-41-live.iso
+out_file: ultramarine-xfce-41-live-anaconda.iso
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 iso:
-  volume_id: UM-Xfce-Live
+  volume_id: UM-Xfce-Live-Anaconda
 
 scripts:
   post:

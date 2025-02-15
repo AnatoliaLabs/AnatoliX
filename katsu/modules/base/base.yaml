@@ -11,6 +11,9 @@ scripts:
     - id: buildstamp
       name: Generate buildstamp
       file: buildstamp.sh
+    - id: terra-mesa
+      name: Enable Terra Mesa Stream
+      file: terra-mesa.sh
 
 dnf:
   releasever: 41
@@ -21,6 +24,7 @@ dnf:
     - --setopt=keepcache=True
     - --setopt=tsflags=
     - --setopt=max_parallel_downloads=20
+    - --setopt=install_weak_deps=True
   exclude:
     - fedora-release*
     - generic-release*

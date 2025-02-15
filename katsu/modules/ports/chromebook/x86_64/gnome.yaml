@@ -1,8 +1,8 @@
 builder: dnf
 
 import:
-  - chromebook.yaml
-  - ../../../gnome/gnome.yaml
+  - ../chromebook.yaml
+  - ../../../gnome/gnome-live.yaml
   - ../../../gnome/base-disk-x86_64.yaml
 
 distro: Ultramarine Linux 41 GNOME (Chromebook Edition)

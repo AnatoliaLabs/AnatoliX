@@ -1,9 +1,3 @@
-scripts:
-  post:
-    - id: flagship
-      name: Extra Flagship setup
-      file: ./flagship-extra.sh
-
 dnf:
   releasever: 41
   exec: dnf4

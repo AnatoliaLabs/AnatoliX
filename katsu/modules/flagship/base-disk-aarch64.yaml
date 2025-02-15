@@ -11,6 +11,7 @@ distro: Ultramarine Linux 41 (Flagship Edition)
 import:
   - ../base/base.yaml
   - ../base/base-disk.yaml
+  - ../base/desktop.yaml
   - flagship.yaml
 
 scripts:
@@ -20,7 +21,7 @@ scripts:
       file: ../base/grub-setup.sh
 
 disk:
-  size: 13GB
+  size: 15GB
   partitions:
     - label: EFI
       type: esp

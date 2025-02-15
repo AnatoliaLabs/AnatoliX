@@ -11,6 +11,7 @@ distro: Ultramarine Linux 41 (Plasma Edition)
 import:
   - ../base/base.yaml
   - ../base/base-disk.yaml
+  - ../base/desktop.yaml
   - plasma.yaml
   - plasma-disk.yaml
 
@@ -21,7 +22,7 @@ scripts:
       file: ../base/grub-setup.sh
 
 disk:
-  size: 13GB
+  size: 15GB
   partitions:
     - label: EFI
       type: esp

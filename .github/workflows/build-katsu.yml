@@ -63,21 +63,57 @@ jobs:
           - gnome/base-disk
           - plasma/base-disk
           - xfce/base-disk
-          #- ports/chromebook/flagship
-          #- ports/chromebook/gnome
-          #- ports/chromebook/plasma
-          #- ports/chromebook/xfce
+          - ports/chromebook/x86_64/flagship
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
+          - ports/chromebook/mt8183/flagship
+          - ports/chromebook/mt8183/gnome
+          - ports/chromebook/mt8183/plasma
+          - ports/chromebook/mt8183/xfce
+          - ports/chromebook/mt8192/flagship
+          - ports/chromebook/mt8192/gnome
+          - ports/chromebook/mt8192/plasma
+          - ports/chromebook/mt8192/xfce
+          - ports/chromebook/sc7180/flagship
+          - ports/chromebook/sc7180/gnome
+          - ports/chromebook/sc7180/plasma
+          - ports/chromebook/sc7180/xfce
           # TODO: figure out how to get loop devices to work on our ARM runners
         exclude:
           - arch: aarch64
-            variant: flagship/flagship-chromebook
+            variant: ports/chromebook/x86_64/flagship
           - arch: aarch64
-            variant: gnome/gnome-chromebook
+            variant: ports/chromebook/x86_64/gnome
           - arch: aarch64
-            variant: plasma/plasma-chromebook
+            variant: ports/chromebook/x86_64/plasma
           - arch: aarch64
-            variant: xfce/xfce-chromebook
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+            variant: ports/chromebook/x86_64/xfce
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/flagship
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/gnome
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/plasma
+          - arch: x86_64
+            variant: ports/chromebook/mt8183/xfce
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/flagship
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/gnome
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/plasma
+          - arch: x86_64
+            variant: ports/chromebook/mt8192/xfce
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/flagship
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/gnome
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/plasma
+          - arch: x86_64
+            variant: ports/chromebook/sc7180/xfce
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
@@ -139,6 +175,14 @@ jobs:
           - ports/surface/gnome-live
           - ports/surface/plasma-live
           - ports/surface/xfce-live
+          - flagship/flagship-live-anaconda
+          - gnome/gnome-live-anaconda
+          - plasma/plasma-live-anaconda
+          - xfce/xfce-live-anaconda
+          - ports/chromebook/x86_64/flagship
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
         exclude:
           - arch: aarch64
             variant: ports/surface/flagship-live
@@ -148,7 +192,7 @@ jobs:
             variant: ports/surface/plasma-live
           - arch: aarch64
             variant: ports/surface/xfce-live
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
@@ -203,6 +247,70 @@ jobs:
           path: katsu/*.iso
           compression-level: 0
 
+  tar:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - x86_64
+          - aarch64
+        variant:
+          - wsl/wsl
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
+    container:
+      image: ghcr.io/terrapkg/builder:f41
+      # Pass /dev from host to container
+      # Very hacky, but it works
+      # Microsoft/Github, if you're reading this,
+      # I'm sorry.
+      options: --privileged -v /dev:/dev
+    steps:
+      - name: Install dependencies
+        run: |
+          dnf up -y
+          dnf install -y $DNF_PKGS
+          dnf clean all
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: sanitize artifact name
+        run: |
+          name=$(echo ${{ matrix.variant }} | sed 's/\//-/g')
+          name=$name-${{ matrix.arch }}
+
+          # set github variable
+          echo artifact=$name >> $GITHUB_ENV
+          # Get architecture
+          # e.g. base/base-disk-x86_64 -> x86_64
+          echo arch=$(echo ${{ matrix.variant }} | cut -d'-' -f3) >> $GITHUB_ENV
+
+      - name: ${{ env.KATSU_BUILD_TASK_NAME }}
+        run: |
+          rm -rf /etc/rpm/macros.image-language-conf
+          chcon system_u:object_r:install_exec_t:s0 "$(which katsu)"
+          pushd katsu
+          KATSU_LOG=trace katsu -v --output=folder "modules/${{ matrix.variant }}.yaml"
+          pushd katsu-work/chroot
+          tar -cf ../chroot.tar .
+          popd
+          mv katsu-work/chroot.tar katsu-work/${{ env.artifact }}.tar
+          # compress tar as zst, output as .tar.zst
+          # have an exception for WSL, as it doesn't support zstd
+          if [ "${{ matrix.variant }}" = "wsl/wsl" ]; then
+            gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
+          else
+            zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst
+          fi
+          popd
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.artifact }}-tar
+          path: |
+            katsu/katsu-work/*.tar.zst
+            katsu/katsu-work/*.tar.gz
+          compression-level: 0
+
   #### LIVE ISO PUSH ####
 
   push-image:
@@ -213,6 +321,7 @@ jobs:
     needs:
       - live-iso
       - image
+      - tar
     if: github.event_name != 'pull_request'
 
     steps:
@@ -257,6 +366,13 @@ jobs:
           done
 
           for file in artifacts/*-image/*; do
+            # if is file
+            if [ -f "$file" ]; then
+              pack_image $file images
+            fi
+          done
+
+          for file in artifacts/*-tar/*; do
             # if is file
             if [ -f "$file" ]; then
               pack_image $file images
