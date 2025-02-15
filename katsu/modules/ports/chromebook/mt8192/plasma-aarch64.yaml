@@ -3,7 +3,7 @@ builder: dnf
 import:
   - mt8192-aarch64.yaml
   - ../../../plasma/plasma.yaml
-  - ../../../plasma/base-disk-aarch64.yaml
+  - ../../../plasma/plasma-disk.yaml
 
 distro: Ultramarine Linux 41 Plasma (mt8192 Chromebook)
 

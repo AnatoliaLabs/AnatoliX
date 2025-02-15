@@ -3,7 +3,6 @@ builder: dnf
 import:
   - mt8192-aarch64.yaml
   - ../../../flagship/flagship.yaml
-  - ../../../flagship/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 Flagship (mt8192 Chromebook)
 

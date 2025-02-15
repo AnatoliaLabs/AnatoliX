@@ -3,7 +3,6 @@ builder: dnf
 import:
   - sc7180-aarch64.yaml
   - ../../../flagship/flagship.yaml
-  - ../../../flagship/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 Flagship (sc7180 Chromebook)
 

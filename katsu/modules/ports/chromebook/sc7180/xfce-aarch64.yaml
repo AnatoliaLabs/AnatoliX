@@ -3,7 +3,6 @@ builder: dnf
 import:
   - sc7180-aarch64.yaml
   - ../../../xfce/xfce.yaml
-  - ../../../xfce/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 Xfce (sc7180 Chromebook)
 

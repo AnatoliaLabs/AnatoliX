@@ -3,7 +3,6 @@ builder: dnf
 import:
   - sc7180-aarch64.yaml
   - ../../../gnome/gnome.yaml
-  - ../../../gnome/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 GNOME (sc7180 Chromebook)
 
