@@ -1,0 +1,5 @@
+scripts:
+  post:
+    - id: readymade
+      name: Set up chromebookinstall for readymade
+      file: chromebookrdm.sh
