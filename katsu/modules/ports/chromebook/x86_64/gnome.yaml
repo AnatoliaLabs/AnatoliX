@@ -4,7 +4,6 @@ import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
   - ../../../gnome/gnome-live.yaml
-  - ../../../gnome/base-disk-x86_64.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
 

@@ -4,7 +4,6 @@ import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
   - ../../../flagship/flagship-live.yaml
-  - ../../../flagship/base-disk-x86_64.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
 

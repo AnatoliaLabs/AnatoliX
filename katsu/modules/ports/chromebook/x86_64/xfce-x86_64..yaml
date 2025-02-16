@@ -3,7 +3,6 @@ builder: dnf
 import:
   - ../chromebook.yaml
   - ../../../xfce/xfce-live.yaml
-  - ../../../xfce/base-disk-x86_64.yaml
 
 distro: Ultramarine Linux 41 Xfce (Chromebook Edition)
 

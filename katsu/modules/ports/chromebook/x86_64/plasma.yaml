@@ -4,7 +4,6 @@ import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
   - ../../../plasma/plasma-live.yaml
-  - ../../../plasma/base-disk-x86_64.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
 
