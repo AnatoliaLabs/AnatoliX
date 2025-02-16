@@ -22,9 +22,6 @@ scripts:
     - id: xfce-live
       name: Set up XFCE Live
       file: ../../xfce/./xfce-live.sh
-    - id: surface.sh
-      name: Enable Surface Watchdog
-      file: ./surface.sh
 
 dnf:
   releasever: 41

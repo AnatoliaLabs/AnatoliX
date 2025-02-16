@@ -15,9 +15,6 @@ scripts:
     - id: plasma-live
       name: Set up Plasma Live
       file: ../../plasma/./plasma-live.sh
-    - id: surface.sh
-      name: Enable Surface Watchdog
-      file: ./surface.sh
 
 bootloader: grub
 
