@@ -2,6 +2,7 @@ builder: dnf
 
 import:
   - ../chromebook.yaml
+  - ../x86_64/chromebook-disk-x86_64.yaml
 
 dnf:
   releasever: 41

@@ -17,7 +17,7 @@ disk:
     - label: Submarine
       type: fe3a2a5d-4f32-41a7-b725-accc3285a309
       size: 64MB
-      filesystem: fat
+      filesystem: ext4
       mountpoint: /submarine
 
     - label: boot
