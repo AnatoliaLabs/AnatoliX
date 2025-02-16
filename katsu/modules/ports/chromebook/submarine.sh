@@ -20,3 +20,6 @@ fi
 
 dd if=$submarine of=$blpart
 cgpt add -i $partnum -t kernel -P 15 -T 1 -S 1 /dev/$rootdev
+
+# Workaround for katsu trying to unmount /submarine
+mount -o bind /submarine /submarine
