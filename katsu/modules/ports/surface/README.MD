@@ -1,6 +1,6 @@
 # Microsoft Surfaces
 
-These are not a new edition, they are simply Ultramarine with the Surface kernel preinstalled.
+Ultramarine on Surface is part of Ultramarine Anywhere.
 
 Special thanks to the Linux Surface team.
 
