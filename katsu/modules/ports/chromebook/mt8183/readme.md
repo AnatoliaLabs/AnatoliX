@@ -4,4 +4,4 @@ This is our most complete port. Our reference device is the Lenovo Chromebook Du
 
 ## Known Issues
 
-- Devices may loudly beep if the speakers are active within 15 seconds of sleep.
+- Krane may loudly beep if the speakers are active within 15 seconds of sleep.
