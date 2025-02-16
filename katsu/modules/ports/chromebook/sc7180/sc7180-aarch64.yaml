@@ -11,7 +11,6 @@ dnf:
     - kernel-sc7180
     - kernel-sc7180-devel
     - msm-cros-efs-loader
-    - ultramarine-backgrounds
     - linux-firmware-trogdor
 
 disk:
