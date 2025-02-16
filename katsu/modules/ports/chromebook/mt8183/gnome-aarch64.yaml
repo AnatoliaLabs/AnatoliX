@@ -3,7 +3,6 @@ builder: dnf
 import:
   - mt8183-aarch64.yaml
   - ../../../gnome/gnome.yaml
-  - ../../../gnome/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 41 GNOME (mt8183 Chromebook)
 

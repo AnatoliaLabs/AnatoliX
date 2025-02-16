@@ -3,7 +3,6 @@ builder: dnf
 import:
   - sc7180-aarch64.yaml
   - ../../../plasma/plasma.yaml
-  - ../../../plasma/plasma-disk.yaml
 
 distro: Ultramarine Linux 41 Plasma (sc7180 Chromebook)
 
