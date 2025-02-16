@@ -1,3 +1,6 @@
+import:
+  - ../../base/base.yaml
+
 builder: dnf
 
 scripts:
