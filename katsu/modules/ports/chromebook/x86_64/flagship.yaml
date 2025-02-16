@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
+  - chromebook-disk-x86_64.yaml
   - ../../../flagship/flagship-live.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml

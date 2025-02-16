@@ -2,6 +2,7 @@ builder: dnf
 
 import:
   - ../chromebook.yaml
+  - chromebook-disk-x86_64.yaml
   - ../../../flagship/flagship-live.yaml
 
 distro: Ultramarine Linux 41 Flagship (Chromebook Edition)
