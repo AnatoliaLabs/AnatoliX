@@ -2,6 +2,7 @@ builder: dnf
 
 import:
   - ../chromebook.yaml
+  - chromebook-disk-x86_64.yaml
   - ../../../plasma/plasma-live.yaml
 
 distro: Ultramarine Linux 41 Plasma (Chromebook Edition)
