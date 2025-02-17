@@ -1,0 +1,28 @@
+builder: dnf
+
+import:
+  - ../../base/base.yaml
+  - ../../live/live.yaml
+  - ../../gnome/gnome.yaml
+  - surface.yaml
+
+distro: Ultramarine GNOME 41
+
+out_file: ultramarine-gnome-41-surface.iso
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+iso:
+  volume_id: UM-Gn-Live
+
+scripts:
+  post:
+    - id: gnome-live
+      name: Set up GNOME Live
+      file: ../../gnome/./gnome-live.sh
+
+dnf:
+  releasever: 41
+  exec: dnf4
