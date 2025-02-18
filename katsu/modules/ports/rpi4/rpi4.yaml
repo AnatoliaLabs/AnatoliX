@@ -21,7 +21,7 @@ dnf:
   exec: dnf4
   packages:
     - ultramarine-repos-rpi
-    - ultramarine-release-raspberry-pi
+#    - ultramarine-release-raspberry-pi
     - kernel-rpi4
     - rpi-utils
     - uboot-images-armv8
