@@ -137,7 +137,7 @@ jobs:
             variant: ports/rpi5/plasma
           - arch: x86_64
             variant: ports/rpi5/xfce
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
@@ -195,6 +195,10 @@ jobs:
           - gnome/gnome-live
           - plasma/plasma-live
           - xfce/xfce-live
+          - ports/surface/flagship-live
+          - ports/surface/gnome-live
+          - ports/surface/plasma-live
+          - ports/surface/xfce-live
           - flagship/flagship-live-anaconda
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
@@ -203,7 +207,16 @@ jobs:
           - ports/chromebook/x86_64/gnome
           - ports/chromebook/x86_64/plasma
           - ports/chromebook/x86_64/xfce
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+        exclude:
+          - arch: aarch64
+            variant: ports/surface/flagship-live
+          - arch: aarch64
+            variant: ports/surface/gnome-live
+          - arch: aarch64
+            variant: ports/surface/plasma-live
+          - arch: aarch64
+            variant: ports/surface/xfce-live
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
@@ -267,7 +280,7 @@ jobs:
           - aarch64
         variant:
           - wsl/wsl
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
@@ -325,7 +338,7 @@ jobs:
   #### LIVE ISO PUSH ####
 
   push-image:
-    runs-on: arm64
+    runs-on: arm64-lg
     container:
       image: ghcr.io/terrapkg/builder:f41
     environment: production

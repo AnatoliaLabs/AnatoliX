@@ -1,6 +1,17 @@
 dnf:
   releasever: 41
   exec: dnf4
+  exclude:
+    # use ultramarine-langpacks
+    - langpacks-*
+    - default-fonts-*
+    # remove broken imsettings
+    - im-chooser
+    # Experiementally remove the following packages
+    # I have no idea why they are pulled in
+    - qemu*
   packages:
     - readymade
     - taidan
+    - ultramarine-langpacks-core-en
+    - ultramarine-langpacks-fonts-en

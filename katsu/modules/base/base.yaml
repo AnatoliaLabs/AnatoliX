@@ -11,6 +11,9 @@ scripts:
     - id: buildstamp
       name: Generate buildstamp
       file: buildstamp.sh
+    - id: terra-mesa
+      name: Enable Terra Mesa Stream
+      file: terra-mesa.sh
 
 dnf:
   releasever: 41

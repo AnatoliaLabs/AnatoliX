@@ -10,7 +10,7 @@ dnf:
   packages:
     - kernel-sc7180
     - kernel-sc7180-devel
-    - terra-msm-cros-efs-loader
+    - msm-cros-efs-loader
     - ultramarine-backgrounds
     - linux-firmware-trogdor
 
