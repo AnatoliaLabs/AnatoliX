@@ -175,6 +175,10 @@ jobs:
           - ports/surface/gnome-live
           - ports/surface/plasma-live
           - ports/surface/xfce-live
+          - ports/surface/flagship-live-anaconda
+          - ports/surface/gnome-live-anaconda
+          - ports/surface/plasma-live-anaconda
+          - ports/surface/xfce-live-anaconda
           - flagship/flagship-live-anaconda
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
@@ -192,6 +196,14 @@ jobs:
             variant: ports/surface/plasma-live
           - arch: aarch64
             variant: ports/surface/xfce-live
+          - arch: aarch64
+            variant: ports/surface/flagship-live-anaconda
+          - arch: aarch64
+            variant: ports/surface/gnome-live-anaconda
+          - arch: aarch64
+            variant: ports/surface/plasma-live-anaconda
+          - arch: aarch64
+            variant: ports/surface/xfce-live-anaconda
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
