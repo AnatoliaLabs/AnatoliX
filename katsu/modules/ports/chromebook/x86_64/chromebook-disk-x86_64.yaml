@@ -9,23 +9,21 @@ distro: Ultramarine Linux 41
 #       - wheel
 
 import:
-  - ../../base-disk.yaml
+  - ../../../base/base-disk.yaml
 
 dnf:
   releasever: 41
   exec: dnf4
-  packages:
-    - ultramarine-release-identity-basic
 
 scripts:
   post:
     - id: grub
       name: Set up GRUB
-      file: grub-setup.sh
+      file: ../../../base/grub-setup.sh
     - id: multi-user
       priority: 60
       name: Set default target to multi-user
-      file: default-target.sh
+      file: ../../../base/default-target.sh
 
 disk:
   size: 6GB
