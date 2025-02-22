@@ -4,6 +4,7 @@ import:
   - ../../base/base.yaml
   - ../../live/readymade.yaml
   - ../../plasma/plasma.yaml
+  - ../../base/desktop.yaml
   - surface.yaml
 
 distro: Ultramarine Linux 41 (Plasma Edition)

@@ -4,6 +4,7 @@ import:
   - ../../base/base.yaml
   - ../../live/readymade.yaml
   - ../../flagship/flagship.yaml
+  - ../../base/desktop.yaml
   - surface.yaml
 
 distro: Ultramarine Linux 41 (Flagship Edition)
