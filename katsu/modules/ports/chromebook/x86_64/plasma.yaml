@@ -4,9 +4,11 @@ import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
   - chromebook-disk-x86_64.yaml
-  - ../../../plasma/plasma-live.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
+  - ../../../plasma/plasma.yaml
+  - ../../../base/desktop.yaml
+  - ../../../base/base.yaml
 
 distro: Ultramarine Linux 41 Plasma (Chromebook Edition)
 
