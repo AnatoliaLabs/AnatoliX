@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+mkdir -p /submarine
+
 # Find bootloader partition and umount
 blpart="$(findmnt -n -o SOURCE /submarine)"
 rootdev="$(basename `readlink -f "/sys/class/block/$(basename $blpart)/.."`)"
