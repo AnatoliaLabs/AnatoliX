@@ -6,4 +6,5 @@ dnf:
     - anaconda-live
     - anaconda-install-env-deps
     - "@anaconda-tools"
-    - python3-umstellar
+    #- python3-umstellar
+    - taidan
