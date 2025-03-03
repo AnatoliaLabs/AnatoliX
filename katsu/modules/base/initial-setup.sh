@@ -11,4 +11,4 @@
 # Set default target to graphical
 systemctl set-default graphical.target
 
-touchc /.unconfigured
+touch /.unconfigured
