@@ -6,9 +6,6 @@ scripts:
     - id: disk-setup
       name: Extra configuration for disk images
       file: disk-setup.sh
-    - id: initial-setup
-      name: Enable Initial Setup
-      file: initial-setup.sh
       priority: 50
 dnf:
   releasever: 41
