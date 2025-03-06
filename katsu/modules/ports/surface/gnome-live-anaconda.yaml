@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../../base/base.yaml
   - ../../live/anaconda.yaml
+  - ../../live/live.yaml
   - ../../gnome/gnome.yaml
   - surface.yaml
 

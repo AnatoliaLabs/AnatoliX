@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../../base/base.yaml
   - ../../live/anaconda.yaml
+  - ../../live/live.yaml
   - ../../flagship/flagship.yaml
   - surface.yaml
 

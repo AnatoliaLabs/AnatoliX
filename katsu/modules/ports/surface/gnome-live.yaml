@@ -3,6 +3,7 @@ builder: dnf
 import:
   - ../../base/base.yaml
   - ../../live/readymade.yaml
+  - ../../live/live.yaml
   - ../../gnome/gnome.yaml
   - ../../base/desktop.yaml
   - surface.yaml
