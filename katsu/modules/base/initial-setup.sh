@@ -12,3 +12,5 @@
 systemctl set-default graphical.target
 
 touch /.unconfigured
+
+systemctl enable taidan-initial-setup-reconfiguration.service
