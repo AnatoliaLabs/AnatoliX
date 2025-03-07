@@ -28,3 +28,4 @@ dnf:
     - libgomp
     - ultramarine-release-identity-basic
     - fedora-repos
+    - langpacks-en
