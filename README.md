@@ -22,7 +22,7 @@ Ultramarine also offers minimal base [Docker images](https://github.com/orgs/Ult
 
 The image itself is similar to the vanilla Fedora image, but includes the Ultramarine Linux repositories and RPMFusion repositories. This may prove useful for some users who want a Fedora-like environment, but with some extra packages.
 
-## Status of Images (UM41)
+## Status of Images (UM42)
 
 ### Notes
 
