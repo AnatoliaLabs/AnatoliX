@@ -6,9 +6,9 @@ import:
   - ../live/anaconda.yaml
   - plasma.yaml
 
-distro: Ultramarine Linux 41 (Plasma Edition)
+distro: Ultramarine Linux 42 (Plasma Edition)
 
-out_file: ultramarine-plasma-41-live-anaconda.iso
+out_file: ultramarine-plasma-42-live-anaconda.iso
 
 scripts:
   post:
@@ -27,5 +27,5 @@ iso:
   volume_id: UM-Kd-Live-Anaconda
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

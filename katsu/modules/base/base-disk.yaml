@@ -11,7 +11,7 @@ scripts:
       file: initial-setup.sh
       priority: 50
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
   options:
     - --setopt=cachedir=/var/cache/dnf

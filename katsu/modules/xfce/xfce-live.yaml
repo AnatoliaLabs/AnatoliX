@@ -7,9 +7,9 @@ import:
   - ../live/readymade.yaml
   - xfce.yaml
 
-distro: Ultramarine Linux 41 (Xfce Edition)
+distro: Ultramarine Linux 42 (Xfce Edition)
 
-out_file: ultramarine-xfce-41-live.iso
+out_file: ultramarine-xfce-42-live.iso
 
 bootloader: grub
 
@@ -25,5 +25,5 @@ scripts:
       file: ./xfce-live.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

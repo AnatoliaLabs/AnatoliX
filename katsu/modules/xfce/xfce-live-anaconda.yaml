@@ -6,9 +6,9 @@ import:
   - ../live/anaconda.yaml
   - xfce.yaml
 
-distro: Ultramarine Linux 41 (Xfce Edition)
+distro: Ultramarine Linux 42 (Xfce Edition)
 
-out_file: ultramarine-xfce-41-live-anaconda.iso
+out_file: ultramarine-xfce-42-live-anaconda.iso
 
 bootloader: grub
 
@@ -24,5 +24,5 @@ scripts:
       file: ./xfce-live.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
