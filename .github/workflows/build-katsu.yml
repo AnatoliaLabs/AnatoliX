@@ -125,9 +125,9 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          dnf4 up -y
-          dnf4 install -y $DNF_PKGS
-          dnf4 clean all
+          dnf up -y
+          dnf install -y $DNF_PKGS
+          dnf clean all
       - name: Checkout
         uses: actions/checkout@v4
       - name: sanitize artifact name
@@ -204,9 +204,9 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          dnf4 up -y
-          dnf4 install -y $DNF_PKGS
-          dnf4 clean all
+          dnf up -y
+          dnf install -y $DNF_PKGS
+          dnf clean all
       - name: sanitize artifact name
         run: |
           name=$(echo ${{ matrix.variant }} | sed 's/\//-/g')
@@ -267,9 +267,9 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          dnf4 up -y
-          dnf4 install -y $DNF_PKGS
-          dnf4 clean all
+          dnf up -y
+          dnf install -y $DNF_PKGS
+          dnf clean all
       - name: Checkout
         uses: actions/checkout@v4
       - name: sanitize artifact name
@@ -327,8 +327,8 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          dnf4 install -y wget
-          dnf4 clean all
+          dnf install -y wget
+          dnf clean all
 
       - name: Download artifacts
         uses: actions/download-artifact@v4
