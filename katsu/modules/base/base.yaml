@@ -25,6 +25,8 @@ dnf:
     - --setopt=tsflags=
     - --setopt=max_parallel_downloads=20
     - --setopt=install_weak_deps=True
+    # HACK: use packages in Terra when Fusion is broken
+    - --nobest
   exclude:
     - fedora-release*
     - generic-release*
