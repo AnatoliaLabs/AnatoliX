@@ -171,6 +171,10 @@ jobs:
           - gnome/gnome-live
           - plasma/plasma-live
           - xfce/xfce-live
+          - ports/surface/flagship-live
+          - ports/surface/gnome-live
+          - ports/surface/plasma-live
+          - ports/surface/xfce-live
           - flagship/flagship-live-anaconda
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
@@ -192,7 +196,7 @@ jobs:
             variant: ports/surface/plasma-live
           - arch: aarch64
             variant: ports/surface/xfce-live
-    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'arm64' }}
+    runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f41
       # Pass /dev from host to container
