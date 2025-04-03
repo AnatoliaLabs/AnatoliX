@@ -12,6 +12,9 @@ if rpm -q gnome-initial-setup; then
 elif rpm -q taidan; then
     echo "Enabling Taidan Initial Setup"
     systemctl enable taidan-initial-setup || echo "WARNING: Failed to enable Taidan Initial Setup: $?"
+elif rpm -q kiss; then
+    echo "Enabling KDE Initial Setup"
+    systemctl enable org.kde.initialsystemsetup.service || echo "WARNING: Failed to enable KDE Initial Setup: $?"
 elif rpm -q initial-setup-gui; then
     echo "Enabling Anaconda Initial Setup"
     systemctl enable initial-setup || echo "WARNING: Failed to enable Anaconda Initial Setup: $?"
@@ -37,6 +40,13 @@ elif rpm -q taidan; then
         echo "Taidan Initial Setup is properly enabled"
     else
         echo "ERROR: Taidan Initial Setup is not enabled"
+        exit 1
+    fi
+elif rpm -q kiss; then
+    if systemctl is-enabled org.kde.initialsystemsetup.service >/dev/null 2>&1; then
+        echo "KDE Initial Setup is properly enabled"
+    else
+        echo "ERROR: KDE Initial Setup is not enabled"
         exit 1
     fi
 elif rpm -q initial-setup-gui; then
