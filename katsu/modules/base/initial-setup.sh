@@ -21,3 +21,31 @@ fi
 
 # Set default target to graphical
 systemctl set-default graphical.target
+
+
+# Verify that services are actually enabled based on installed packages
+echo "==== Verifying Initial Setup Services ===="
+if rpm -q gnome-initial-setup; then
+    if [ -f /var/lib/gdm/run-initial-setup ]; then
+        echo "GNOME Initial Setup is properly configured"
+    else
+        echo "ERROR: GNOME Initial Setup file not created properly"
+        exit 1
+    fi
+elif rpm -q initial-setup-gui; then
+    if systemctl is-enabled initial-setup >/dev/null 2>&1; then
+        echo "Anaconda Initial Setup is properly enabled"
+    else
+        echo "ERROR: Anaconda Initial Setup is not enabled"
+        exit 1
+    fi
+elif rpm -q taidan; then
+    if systemctl is-enabled taidan >/dev/null 2>&1; then
+        echo "Taidan Initial Setup is properly enabled"
+    else
+        echo "ERROR: Taidan Initial Setup is not enabled"
+        exit 1
+    fi
+else
+    echo "WARNING: No initial setup package was found, skipping verification"
+fi
