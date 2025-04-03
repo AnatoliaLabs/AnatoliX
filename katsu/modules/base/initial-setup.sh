@@ -9,12 +9,12 @@ if rpm -q gnome-initial-setup; then
     mkdir -p /var/lib/gdm
     echo "Creating initial setup file for GNOME"
     touch /var/lib/gdm/run-initial-setup
+elif rpm -q taidan; then
+    echo "Enabling Taidan Initial Setup"
+    systemctl enable taidan-initial-setup || echo "WARNING: Failed to enable Taidan Initial Setup: $?"
 elif rpm -q initial-setup-gui; then
     echo "Enabling Anaconda Initial Setup"
     systemctl enable initial-setup || echo "WARNING: Failed to enable Anaconda Initial Setup: $?"
-elif rpm -q taidan; then
-    echo "Enabling Taidan Initial Setup"
-    systemctl enable taidan || echo "WARNING: Failed to enable Taidan Initial Setup: $?"
 else
     echo "WARNING: No initial setup module found!? Please check the system configuration."
 fi
@@ -32,18 +32,18 @@ if rpm -q gnome-initial-setup; then
         echo "ERROR: GNOME Initial Setup file not created properly"
         exit 1
     fi
+elif rpm -q taidan; then
+    if systemctl is-enabled taidan-initial-setup >/dev/null 2>&1; then
+        echo "Taidan Initial Setup is properly enabled"
+    else
+        echo "ERROR: Taidan Initial Setup is not enabled"
+        exit 1
+    fi
 elif rpm -q initial-setup-gui; then
     if systemctl is-enabled initial-setup >/dev/null 2>&1; then
         echo "Anaconda Initial Setup is properly enabled"
     else
         echo "ERROR: Anaconda Initial Setup is not enabled"
-        exit 1
-    fi
-elif rpm -q taidan; then
-    if systemctl is-enabled taidan >/dev/null 2>&1; then
-        echo "Taidan Initial Setup is properly enabled"
-    else
-        echo "ERROR: Taidan Initial Setup is not enabled"
         exit 1
     fi
 else
