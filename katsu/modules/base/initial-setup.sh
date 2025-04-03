@@ -9,6 +9,7 @@ if rpm -q gnome-initial-setup; then
     mkdir -p /var/lib/gdm
     echo "Creating initial setup file for GNOME"
     touch /var/lib/gdm/run-initial-setup
+    sed '/[daemon]/a InitialSetupEnable=True' /etc/gdm/custom.conf
 elif rpm -q taidan; then
     echo "Enabling Taidan Initial Setup"
     systemctl enable taidan-initial-setup || echo "WARNING: Failed to enable Taidan Initial Setup: $?"

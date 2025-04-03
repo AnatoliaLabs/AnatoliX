@@ -6,8 +6,3 @@ dnf:
     - ultramarine-release-gnome
     - ultramarine-release-identity-gnome
 
-scripts:
-  post:
-    - id: gnome-initial-setup
-      name: Set GNOME Initial Setup to run
-      file: gnome-initial-setup.sh
