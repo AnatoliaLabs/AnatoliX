@@ -6,7 +6,6 @@ dnf:
     - "@ultramarine-plasma-product-environment"
     - ultramarine-release-plasma
     - ultramarine-release-identity-plasma
-    - kiss
   exclude:
     - ibus
     - ibus-mozc
