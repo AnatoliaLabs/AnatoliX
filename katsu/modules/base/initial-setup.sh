@@ -22,17 +22,17 @@ enable_svc() {
 echo "==== Initial Setup ===="
 setup_found=false
 
-# Handle gnome-initial-setup as the primary check
-if rpm -q gnome-initial-setup >/dev/null 2>&1; then
+# Check for taidan package
+if rpm -q taidan >/dev/null 2>&1; then
+    echo "Enabling taidan Initial Setup"
+    enable_svc "taidan" "taidan-initial-setup"
+    setup_found=true
+# Handle gnome-initial-setup as the second check
+elif rpm -q gnome-initial-setup >/dev/null 2>&1; then
     mkdir -p /var/lib/gdm
     echo "Creating initial setup file for GNOME"
     touch /var/lib/gdm/run-initial-setup
     sed '/[daemon]/a InitialSetupEnable=True' /etc/gdm/custom.conf
-    setup_found=true
-# Check for taidan package
-elif rpm -q taidan >/dev/null 2>&1; then
-    echo "Enabling taidan Initial Setup"
-    enable_svc "taidan" "taidan-initial-setup"
     setup_found=true
 # Check for kiss package
 elif rpm -q kiss >/dev/null 2>&1; then
@@ -57,8 +57,16 @@ systemctl set-default graphical.target
 echo "==== Verifying Initial Setup Services ===="
 found_pkg_svc=false
 
+# Verify taidan package
+if rpm -q taidan >/dev/null 2>&1; then
+    assert_svc "taidan-initial-setup"
+    if ! systemctl is-enabled "taidan-initial-setup" >/dev/null 2>&1; then
+        echo "ERROR: taidan Initial Setup is not enabled"
+        exit 1
+    fi
+    found_pkg_svc=true
 # Verify GNOME Initial Setup (special case)
-if rpm -q gnome-initial-setup >/dev/null 2>&1; then
+elif rpm -q gnome-initial-setup >/dev/null 2>&1; then
     if [ -f /var/lib/gdm/run-initial-setup ]; then
         echo "GNOME Initial Setup is properly configured"
         found_pkg_svc=true
@@ -66,14 +74,6 @@ if rpm -q gnome-initial-setup >/dev/null 2>&1; then
         echo "ERROR: GNOME Initial Setup file not created properly"
         exit 1
     fi
-# Verify taidan package
-elif rpm -q taidan >/dev/null 2>&1; then
-    assert_svc "taidan-initial-setup"
-    if ! systemctl is-enabled "taidan-initial-setup" >/dev/null 2>&1; then
-        echo "ERROR: taidan Initial Setup is not enabled"
-        exit 1
-    fi
-    found_pkg_svc=true
 # Verify kiss package
 elif rpm -q kiss >/dev/null 2>&1; then
     assert_svc "org.kde.initialsystemsetup.service"
