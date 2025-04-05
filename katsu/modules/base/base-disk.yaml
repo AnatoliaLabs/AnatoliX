@@ -37,6 +37,7 @@ dnf:
     - dracut-tools
     - dnf
     - dracut
+    - taidan
     # - mkpasswd # maybe not needed soon
     - "@core"
     - "@standard"

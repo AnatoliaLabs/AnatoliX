@@ -1,5 +1,6 @@
 dnf:
   releasever: 41
   exec: dnf4
-  packages:
-    - kiss
+  # We want to use taidan for every version
+  # packages:
+  #   - kiss
