@@ -4,12 +4,12 @@
 # Note from Cappy:
 # This script may fail if the system is not properly configured, we need to ensure that packages are installed and configured correctly.
 
-# Key-value pairs of package-service name
+# Key-value pairs of package-service name - numbered to preserve order
 declare -A pkg_service_map=(
-    ["gnome-initial-setup"]="!"
-    ["taidan"]="taidan-initial-setup"
-    ["kiss"]="org.kde.initialsystemsetup.service"
-    ["initial-setup-gui"]="initial-setup"
+    ["1_gnome-initial-setup"]="!"
+    ["2_taidan"]="taidan-initial-setup"
+    ["3_kiss"]="org.kde.initialsystemsetup.service"
+    ["4_initial-setup-gui"]="initial-setup"
 )
 
 assert_svc() {
@@ -25,7 +25,7 @@ enable_svc() {
     local pkg=$1
     local svc=$2
     systemctl enable $svc || echo "WARNING: Failed to enable $svc: $?"
-    
+
 }
 
 echo "==== Initial Setup ===="
@@ -46,10 +46,11 @@ else
         fi
 
         # Check if package is installed
-        if rpm -q "$pkg"; then
+        pkg_name="${pkg#*_}"  # Remove the number prefix when checking
+        if rpm -q "$pkg_name"; then
             svc="${pkg_service_map[$pkg]}"
-            echo "Enabling $pkg Initial Setup"
-            enable_svc "$pkg" "$svc"
+            echo "Enabling $pkg_name Initial Setup"
+            enable_svc "$pkg_name" "$svc"
             setup_found=true
             break  # Exit loop after finding the first valid setup
         fi
@@ -85,11 +86,12 @@ for pkg in "${!pkg_service_map[@]}"; do
         continue  # Skip special case entries
     fi
 
-    if rpm -q "$pkg"; then
+    pkg_name="${pkg#*_}"  # Remove the number prefix when checking
+    if rpm -q "$pkg_name"; then
         svc="${pkg_service_map[$pkg]}"
         assert_svc "$svc"
         if ! systemctl is-enabled "$svc" >/dev/null 2>&1; then
-            echo "ERROR: $pkg Initial Setup is not enabled"
+            echo "ERROR: $pkg_name Initial Setup is not enabled"
             exit 1
         fi
         found_pkg_svc=true
