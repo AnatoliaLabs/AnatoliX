@@ -4,14 +4,6 @@
 # Note from Cappy:
 # This script may fail if the system is not properly configured, we need to ensure that packages are installed and configured correctly.
 
-# Key-value pairs of package-service name - numbered to preserve order
-declare -A pkg_service_map=(
-    ["1_gnome-initial-setup"]="!"
-    ["2_taidan"]="taidan-initial-setup"
-    ["3_kiss"]="org.kde.initialsystemsetup.service"
-    ["4_initial-setup-gui"]="initial-setup"
-)
-
 assert_svc() {
     local svc=$1
     if systemctl is-enabled $svc >/dev/null 2>&1; then
@@ -25,8 +17,8 @@ enable_svc() {
     local pkg=$1
     local svc=$2
     systemctl enable -f $svc || echo "WARNING: Failed to enable $svc: $?"
-
 }
+
 echo "==== Initial Setup ===="
 setup_found=false
 
@@ -37,23 +29,21 @@ if rpm -q gnome-initial-setup >/dev/null 2>&1; then
     touch /var/lib/gdm/run-initial-setup
     sed '/[daemon]/a InitialSetupEnable=True' /etc/gdm/custom.conf
     setup_found=true
-else
-    # If gnome-initial-setup isn't installed, check each package in the map
-    for pkg in "${!pkg_service_map[@]}"; do
-        if [[ "${pkg_service_map[$pkg]}" == "!" ]]; then
-            continue  # Skip special case entries
-        fi
-
-        # Check if package is installed
-        pkg_name="${pkg#*_}"  # Remove the number prefix when checking
-        if rpm -q "$pkg_name" >/dev/null 2>&1; then
-            svc="${pkg_service_map[$pkg]}"
-            echo "Enabling $pkg_name Initial Setup"
-            enable_svc "$pkg_name" "$svc"
-            setup_found=true
-            break  # Exit loop after finding the first valid setup
-        fi
-    done
+# Check for taidan package
+elif rpm -q taidan >/dev/null 2>&1; then
+    echo "Enabling taidan Initial Setup"
+    enable_svc "taidan" "taidan-initial-setup"
+    setup_found=true
+# Check for kiss package
+elif rpm -q kiss >/dev/null 2>&1; then
+    echo "Enabling kiss Initial Setup"
+    enable_svc "kiss" "org.kde.initialsystemsetup.service"
+    setup_found=true
+# Check for initial-setup-gui package
+elif rpm -q initial-setup-gui >/dev/null 2>&1; then
+    echo "Enabling initial-setup-gui Initial Setup"
+    enable_svc "initial-setup-gui" "initial-setup"
+    setup_found=true
 fi
 
 if [ "$setup_found" = false ]; then
@@ -76,25 +66,30 @@ if rpm -q gnome-initial-setup >/dev/null 2>&1; then
         echo "ERROR: GNOME Initial Setup file not created properly"
         exit 1
     fi
-else
-    # Only verify other packages if GNOME setup is not installed
-    for pkg in "${!pkg_service_map[@]}"; do
-        if [[ "${pkg_service_map[$pkg]}" == "!" ]]; then
-            continue  # Skip special case entries
-        fi
-
-        pkg_name="${pkg#*_}"  # Remove the number prefix when checking
-        if rpm -q "$pkg_name" >/dev/null 2>&1; then
-            svc="${pkg_service_map[$pkg]}"
-            assert_svc "$svc"
-            if ! systemctl is-enabled "$svc" >/dev/null 2>&1; then
-                echo "ERROR: $pkg_name Initial Setup is not enabled"
-                exit 1
-            fi
-            found_pkg_svc=true
-            break  # Exit loop after verifying the first valid setup
-        fi
-    done
+# Verify taidan package
+elif rpm -q taidan >/dev/null 2>&1; then
+    assert_svc "taidan-initial-setup"
+    if ! systemctl is-enabled "taidan-initial-setup" >/dev/null 2>&1; then
+        echo "ERROR: taidan Initial Setup is not enabled"
+        exit 1
+    fi
+    found_pkg_svc=true
+# Verify kiss package
+elif rpm -q kiss >/dev/null 2>&1; then
+    assert_svc "org.kde.initialsystemsetup.service"
+    if ! systemctl is-enabled "org.kde.initialsystemsetup.service" >/dev/null 2>&1; then
+        echo "ERROR: kiss Initial Setup is not enabled"
+        exit 1
+    fi
+    found_pkg_svc=true
+# Verify initial-setup-gui package
+elif rpm -q initial-setup-gui >/dev/null 2>&1; then
+    assert_svc "initial-setup"
+    if ! systemctl is-enabled "initial-setup" >/dev/null 2>&1; then
+        echo "ERROR: initial-setup-gui Initial Setup is not enabled"
+        exit 1
+    fi
+    found_pkg_svc=true
 fi
 
 if [ "$setup_found" = false ] && [ "$found_pkg_svc" = false ]; then
