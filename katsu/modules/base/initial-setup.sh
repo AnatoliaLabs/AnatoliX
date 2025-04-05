@@ -24,7 +24,7 @@ assert_svc() {
 enable_svc() {
     local pkg=$1
     local svc=$2
-    systemctl enable $svc || echo "WARNING: Failed to enable $svc: $?"
+    systemctl enable -f $svc || echo "WARNING: Failed to enable $svc: $?"
 
 }
 
