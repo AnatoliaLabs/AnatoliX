@@ -183,10 +183,6 @@ jobs:
           # - ports/chromebook/x86_64/gnome
           # - ports/chromebook/x86_64/plasma
           # - ports/chromebook/x86_64/xfce
-          - ports/surface/flagship-live
-          - ports/surface/gnome-live
-          - ports/surface/plasma-live
-          - ports/surface/xfce-live
         exclude:
           - arch: aarch64
             variant: ports/surface/flagship-live
