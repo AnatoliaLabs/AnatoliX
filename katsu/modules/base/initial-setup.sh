@@ -60,8 +60,8 @@ found_pkg_svc=false
 
 # Verify taidan package
 if rpm -q taidan >/dev/null 2>&1; then
-    assert_svc "taidan-initial-setup"
-    if ! systemctl is-enabled "taidan-initial-setup" >/dev/null 2>&1; then
+    assert_svc "taidan-initial-setup-reconfiguration"
+    if ! systemctl is-enabled "taidan-initial-setup-reconfiguration" >/dev/null 2>&1; then
         echo "ERROR: taidan Initial Setup is not enabled"
         exit 1
     fi
