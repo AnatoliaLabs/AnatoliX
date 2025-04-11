@@ -25,7 +25,8 @@ setup_found=false
 # Check for taidan package
 if rpm -q taidan >/dev/null 2>&1; then
     echo "Enabling taidan Initial Setup"
-    enable_svc "taidan" "taidan-initial-setup"
+    enable_svc "taidan" "taidan-initial-setup-reconfiguration"
+    touch /.unconfigured
     setup_found=true
 # Handle gnome-initial-setup as the second check
 elif rpm -q gnome-initial-setup >/dev/null 2>&1; then
@@ -59,9 +60,15 @@ found_pkg_svc=false
 
 # Verify taidan package
 if rpm -q taidan >/dev/null 2>&1; then
-    assert_svc "taidan-initial-setup"
-    if ! systemctl is-enabled "taidan-initial-setup" >/dev/null 2>&1; then
+    assert_svc "taidan-initial-setup-reconfiguration"
+    if ! systemctl is-enabled "taidan-initial-setup-reconfiguration" >/dev/null 2>&1; then
         echo "ERROR: taidan Initial Setup is not enabled"
+        exit 1
+    fi
+    if [ -f /.unconfigured ]; then
+        echo "/.unconfigured file exists, taidan will run on next boot"
+    else
+        echo "ERROR: /.unconfigured file not created properly"
         exit 1
     fi
     found_pkg_svc=true
