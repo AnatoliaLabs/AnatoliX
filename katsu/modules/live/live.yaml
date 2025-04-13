@@ -24,6 +24,8 @@ dnf:
     - libblockdev-nvdimm
     - isomd5sum
     - orca
+    # #94
+    - taidan
     - espeak-ng
     - speech-dispatcher-espeak-ng
     - julietaula-montserrat-fonts

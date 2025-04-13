@@ -1,8 +1,5 @@
 scripts:
   post:
-    - id: initial-setup
-      name: Enable Initial Setup
-      file: initial-setup.sh
     - id: disk-setup
       name: Extra configuration for disk images
       file: disk-setup.sh
@@ -37,6 +34,7 @@ dnf:
     - dracut-tools
     - dnf
     - dracut
+    - taidan
     # - mkpasswd # maybe not needed soon
     - "@core"
     - "@standard"
