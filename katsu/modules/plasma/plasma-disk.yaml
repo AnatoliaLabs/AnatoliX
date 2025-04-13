@@ -1,5 +1,5 @@
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf5
   packages:
     - initial-setup-gui-wayland-plasma # Use KWin version of initial-setup

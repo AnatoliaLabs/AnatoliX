@@ -46,4 +46,4 @@ disk:
 
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf5
