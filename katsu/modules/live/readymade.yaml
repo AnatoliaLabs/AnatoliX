@@ -11,7 +11,8 @@ dnf:
     # I have no idea why they are pulled in
     - qemu*
   packages:
-    - readymade
+    # for testing purposes only, revert back to readymade before merge
+    - readymade-nightly
     - taidan
     - ultramarine-langpacks-core-en
     - ultramarine-langpacks-fonts-en
