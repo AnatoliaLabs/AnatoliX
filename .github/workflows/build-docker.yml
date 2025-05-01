@@ -93,7 +93,7 @@ jobs:
       - name: ${{ env.KATSU_BUILD_TASK_NAME }}
         run: |
           pushd katsu
-          katsu --output=fs modules/${{ matrix.variant }}.yaml
+          katsu --output=folder modules/${{ matrix.variant }}.yaml
 
           if [ ${{ env.arch }} == "x86_64" ]; then
             host_arch="amd64"
