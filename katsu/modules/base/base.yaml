@@ -29,6 +29,7 @@ dnf:
     - --nobest
   exclude:
     - fedora-release*
+    - fedora-*release*
     - generic-release*
     - kernel-debug*
     - setroubleshoot
