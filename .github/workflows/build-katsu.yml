@@ -203,10 +203,10 @@ jobs:
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
           - xfce/xfce-live-anaconda
-          - ports/chromebook/x86_64/flagship
-          - ports/chromebook/x86_64/gnome
-          - ports/chromebook/x86_64/plasma
-          - ports/chromebook/x86_64/xfce
+          # - ports/chromebook/x86_64/flagship
+          # - ports/chromebook/x86_64/gnome
+          # - ports/chromebook/x86_64/plasma
+          # - ports/chromebook/x86_64/xfce
         exclude:
           - arch: aarch64
             variant: ports/surface/flagship-live
@@ -252,14 +252,18 @@ jobs:
           rm -rf /etc/rpm/macros.image-language-conf
           chcon system_u:object_r:install_exec_t:s0 "$(which katsu)"
           pushd katsu
-          KATSU_KEEP_CHROOT=1 KATSU_LOG=trace katsu -v --output=iso "modules/${{ matrix.variant }}.yaml"
+          KATSU_LOG=trace katsu -v --output=iso "modules/${{ matrix.variant }}.yaml"
           # get the ISO name, and then append the arch
           # e.g. flagship-live.iso -> flagship-live-x86_64.iso
 
+          ls -lR
           # get the ISO name
           iso=$(ls *.iso)
           # append the arch
           mv $iso $(echo $iso | sed "s/.iso/-${{ matrix.arch }}.iso/")
+
+          # list the files in the directory after renaming
+          ls -lR
 
           rm -rf katsu-work/
           popd
@@ -320,7 +324,8 @@ jobs:
           # compress tar as zst, output as .tar.zst
           # have an exception for WSL, as it doesn't support zstd
           if [ "${{ matrix.variant }}" = "wsl/wsl" ]; then
-            gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
+            # A .wsl file is essentially a .tar.gz file, but Windows associates it with WSL, so you can install it directly
+            gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.wsl
           else
             zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst
           fi
@@ -333,6 +338,7 @@ jobs:
           path: |
             katsu/katsu-work/*.tar.zst
             katsu/katsu-work/*.tar.gz
+            katsu/katsu-work/*.wsl
           compression-level: 0
 
   #### LIVE ISO PUSH ####
