@@ -26,5 +26,7 @@ dnf:
     - git
     - rpm
     - libgomp
-    - ultramarine-release-identity-basic
+    - ultramarine-release-wsl
+    - ultramarine-release-identity-wsl
     - fedora-repos
+    - ultramarine-langpacks-en
