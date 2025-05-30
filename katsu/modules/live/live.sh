@@ -55,6 +55,14 @@ systemctl disable openvpn-server@\*.service
 rm -f /etc/machine-id
 touch /etc/machine-id
 
+# Set system as unconfigured so taidan triggers, But we delete this in livesys-session-extra
+# so it won't trigger on the live image, just in case
+touch /.unconfigured
+# This should only trigger on first boot, but on live images it shouldn't
+# because `ConditionKernelCommandLine=!rd.live.image` in the unit file
+systemctl enable taidan-initial-setup-reconfiguration || true
+
+
 # Set locales in chroot
 cat >/etc/locale.conf <<EOF
 LANG=en_US.UTF-8
