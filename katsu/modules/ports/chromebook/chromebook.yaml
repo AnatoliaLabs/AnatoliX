@@ -17,7 +17,7 @@ scripts:
       file: submarine.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   repodir: ../../base/repodir
   exec: dnf4
   packages:

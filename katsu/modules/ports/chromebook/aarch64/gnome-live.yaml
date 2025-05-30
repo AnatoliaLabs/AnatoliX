@@ -1,0 +1,32 @@
+builder: dnf
+
+import:
+  - ../chromebook.yaml
+  - ../chromebook-rdm.yaml
+  - chromebook-disk-aarch64.yaml
+  - ../../../live/readymade.yaml
+  - ../../../live/live.yaml
+  - ../../../gnome/gnome.yaml
+  - ../../../base/desktop.yaml
+  - ../../../base/base.yaml
+
+distro: Ultramarine Linux 42 GNOME (Chromebook Edition)
+
+out_file: ultramarine-cbe-gnome-42-aarch64.iso
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+iso:
+  volume_id: UM-GNOME-Live
+
+scripts:
+  post:
+    - id: gnome-live
+      name: Set up GNOME Live
+      file: ../../../gnome/gnome-live.sh
+
+dnf:
+  releasever: 42
+  exec: dnf4

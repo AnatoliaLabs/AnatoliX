@@ -3,16 +3,16 @@ builder: dnf
 import:
   - ../chromebook.yaml
   - ../chromebook-rdm.yaml
-  - chromebook-disk-x86_64.yaml
+  - chromebook-disk-aarch64.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
   - ../../../flagship/flagship.yaml
   - ../../../base/desktop.yaml
   - ../../../base/base.yaml
 
-distro: Ultramarine Linux 41 Flagship (Chromebook Edition)
+distro: Ultramarine Linux 42 Flagship (Chromebook Edition)
 
-out_file: ultramarine-cbe-flagship-41.iso
+out_file: ultramarine-cbe-flagship-42-aarch64.iso
 
 bootloader: grub
 
@@ -28,5 +28,5 @@ scripts:
       file: ../../../flagship/flagship-live.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

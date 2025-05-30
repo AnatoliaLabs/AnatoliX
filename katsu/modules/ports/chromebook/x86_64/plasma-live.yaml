@@ -2,7 +2,6 @@ builder: dnf
 
 import:
   - ../chromebook.yaml
-  - ../chromebook-rdm.yaml
   - chromebook-disk-x86_64.yaml
   - ../../../live/readymade.yaml
   - ../../../live/live.yaml
@@ -10,9 +9,9 @@ import:
   - ../../../base/desktop.yaml
   - ../../../base/base.yaml
 
-distro: Ultramarine Linux 41 Plasma (Chromebook Edition)
+distro: Ultramarine Linux 42 Plasma (Chromebook Edition)
 
-out_file: ultramarine-cbe-plasma-41.iso
+out_file: ultramarine-cbe-plasma-42-x86_64.iso
 
 bootloader: grub
 
@@ -28,5 +27,5 @@ scripts:
       file: ../../../plasma/plasma-live.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

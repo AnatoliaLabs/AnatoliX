@@ -10,7 +10,6 @@ distro: Ultramarine Linux 42
 
 import:
   - ../../../base/base-disk.yaml
-  - ../chromebook-rdm.yaml
 
 dnf:
   releasever: 42

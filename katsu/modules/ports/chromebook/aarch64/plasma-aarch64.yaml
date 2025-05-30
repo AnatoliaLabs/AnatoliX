@@ -2,14 +2,14 @@ builder: dnf
 
 import:
   - ../chromebook.yaml
-  - chromebook-disk-x86_64.yaml
+  - chromebook-disk-aarch64.yaml
   - ../../../plasma/plasma.yaml
   - ../../../base/desktop.yaml
   - ../../../base/base.yaml
 
 distro: Ultramarine Linux 42 Plasma (Chromebook Edition)
 
-out_file: ultramarine-cbe-plasma-42-x86_64.img
+out_file: ultramarine-cbe-plasma-42-aarch64.img
 
 bootloader: grub
 

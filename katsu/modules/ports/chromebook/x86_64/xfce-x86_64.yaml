@@ -7,14 +7,14 @@ import:
   - ../../../base/desktop.yaml
   - ../../../base/base.yaml
 
-distro: Ultramarine Linux 41 Xfce (Chromebook Edition)
+distro: Ultramarine Linux 42 Xfce (Chromebook Edition)
 
-out_file: ultramarine-cbe-xfce-41.img
+out_file: ultramarine-cbe-xfce-42-x86_64.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
