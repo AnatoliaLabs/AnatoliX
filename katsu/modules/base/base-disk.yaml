@@ -28,7 +28,7 @@ dnf:
     - setup
     - lvm2
     - btrfs-progs
-    - dmraid
+    - mdadm
     - nvme-cli
     - kernel
     - glibc
