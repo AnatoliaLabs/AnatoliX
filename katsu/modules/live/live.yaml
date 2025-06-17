@@ -46,3 +46,4 @@ dnf:
     - um
     - dive
     - mkfstab
+    - dracut-strip-trigger
