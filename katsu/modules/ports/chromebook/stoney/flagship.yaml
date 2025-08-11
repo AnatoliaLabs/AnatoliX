@@ -5,14 +5,14 @@ import:
   - ../../../flagship/flagship.yaml
   - ../../../flagship/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 Flagship (Stoney Chromebook)
+distro: Ultramarine Linux 42 Flagship (Stoney Chromebook)
 
-out_file: ultramarine-cbe-stoney-flagship-41.img
+out_file: ultramarine-cbe-stoney-flagship-42.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

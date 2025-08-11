@@ -2,13 +2,14 @@ builder: dnf
 
 import:
   - ../../base/base.yaml
+  - ../../live/anaconda.yaml
   - ../../live/live.yaml
   - ../../xfce/xfce.yaml
   - surface.yaml
 
-distro: Ultramarine Linux 41 (Xfce Edition)
+distro: Ultramarine Linux 42 (Xfce Edition)
 
-out_file: ultramarine-xfce-41-surface.iso
+out_file: ultramarine-xfce-42-surface.iso
 
 bootloader: grub
 
@@ -24,5 +25,5 @@ scripts:
       file: ../../xfce/./xfce-live.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

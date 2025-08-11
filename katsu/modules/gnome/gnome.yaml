@@ -1,13 +1,10 @@
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
   packages:
     - "@ultramarine-gnome-product-environment"
     - ultramarine-release-gnome
     - ultramarine-release-identity-gnome
+  exclude:
+    - gnome-initial-setup
 
-scripts:
-  post:
-    - id: gnome-initial-setup
-      name: Set GNOME Initial Setup to run
-      file: gnome-initial-setup.sh

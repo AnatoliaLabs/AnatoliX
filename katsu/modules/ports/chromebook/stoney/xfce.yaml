@@ -5,14 +5,14 @@ import:
   - ../../../xfce/xfce.yaml
   - ../../../xfce/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 41 Xfce (Stoney Chromebook)
+distro: Ultramarine Linux 42 Xfce (Stoney Chromebook)
 
-out_file: ultramarine-cbe-stoney-xfce-41.img
+out_file: ultramarine-cbe-stoney-xfce-42.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

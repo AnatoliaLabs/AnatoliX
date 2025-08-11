@@ -1,8 +1,5 @@
 scripts:
   post:
-    - id: initial-setup
-      name: Enable Initial Setup
-      file: initial-setup.sh
     - id: disk-setup
       name: Extra configuration for disk images
       file: disk-setup.sh
@@ -11,7 +8,7 @@ scripts:
       file: initial-setup.sh
       priority: 50
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
   options:
     - --setopt=cachedir=/var/cache/dnf
@@ -28,7 +25,7 @@ dnf:
     - setup
     - lvm2
     - btrfs-progs
-    - dmraid
+    - mdadm
     - nvme-cli
     - kernel
     - glibc
@@ -37,6 +34,7 @@ dnf:
     - dracut-tools
     - dnf
     - dracut
+    - taidan
     # - mkpasswd # maybe not needed soon
     - "@core"
     - "@standard"

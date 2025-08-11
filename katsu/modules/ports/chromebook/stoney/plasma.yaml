@@ -5,14 +5,14 @@ import:
   - ../../../plasma/plasma.yaml
   - ../../../plasma/plasma-disk-x86_64.yaml
 
-distro: Ultramarine Linux 41 Plasma (Stoney Chromebook)
+distro: Ultramarine Linux 42 Plasma (Stoney Chromebook)
 
-out_file: ultramarine-cbe-stoney-plasma-41.img
+out_file: ultramarine-cbe-stoney-plasma-42.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

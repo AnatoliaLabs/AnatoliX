@@ -4,7 +4,7 @@ scripts:
       name: Set up Live Image
       file: live.sh
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
   exclude:
     - fedora-release*
@@ -24,6 +24,8 @@ dnf:
     - libblockdev-nvdimm
     - isomd5sum
     - orca
+    # #94
+    - taidan
     - espeak-ng
     - speech-dispatcher-espeak-ng
     - julietaula-montserrat-fonts
@@ -40,3 +42,8 @@ dnf:
     # for drivers and other stuff
     - kernel
     - kernel-devel-matched
+    # UMSS
+    - um
+    - dive
+    - mkfstab
+    - dracut-strip-trigger

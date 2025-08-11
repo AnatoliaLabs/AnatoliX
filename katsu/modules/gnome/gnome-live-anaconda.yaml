@@ -2,13 +2,14 @@ builder: dnf
 
 import:
   - ../base/base.yaml
+  - ../base/desktop.yaml
   - ../live/live.yaml
   - ../live/anaconda.yaml
   - gnome.yaml
 
-distro: Ultramarine GNOME 41
+distro: Ultramarine GNOME 42
 
-out_file: ultramarine-gnome-41-live-anaconda.iso
+out_file: ultramarine-gnome-42-live-anaconda.iso
 
 bootloader: grub
 
@@ -27,5 +28,5 @@ scripts:
       file: gnome-live-anaconda.sh
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4

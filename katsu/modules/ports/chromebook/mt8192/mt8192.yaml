@@ -4,7 +4,7 @@ import:
   - ../chromebook.yaml
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
   arch: aarch64
   packages:

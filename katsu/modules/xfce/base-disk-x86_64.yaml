@@ -1,5 +1,5 @@
 builder: dnf
-distro: Ultramarine Linux 41 (Xfce Edition)
+distro: Ultramarine Linux 42 (Xfce Edition)
 
 # users:
 #   - username: ultramarine
@@ -21,7 +21,7 @@ scripts:
       file: ../base/grub-setup.sh
 
 disk:
-  size: 14GB
+  size: 16GB
   partitions:
     - label: EFI
       type: esp
@@ -44,5 +44,5 @@ disk:
       mountpoint: /
 
 dnf:
-  releasever: 41
+  releasever: 42
   exec: dnf4
