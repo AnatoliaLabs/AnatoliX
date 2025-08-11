@@ -52,7 +52,7 @@ dnf:
       - grub2-pc-modules
       - shim-x64
       - shim-unsigned-x64
-#   packages:
+   packages:
 #     - filesystem
 #     - setup
 #     - lvm2
@@ -78,7 +78,7 @@ dnf:
 #     # - ultramarine-release-identity-basic
 #     - fedora-repos
 #     - efibootmgr
-#     - ultramarine-release-common
-#     - ultramarine-release
-#     - ultramarine-repos
-#     - "ultramarine-logos*"
+     - ultramarine-release-common
+     - ultramarine-release
+     - ultramarine-repos
+     - ultramarine-logos
