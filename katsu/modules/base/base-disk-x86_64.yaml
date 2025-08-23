@@ -29,7 +29,7 @@ scripts:
       file: default-target.sh
 
 disk:
-  size: 7GB
+  size: 10GB
   partitions:
     - label: EFI
       type: esp
