@@ -24,8 +24,19 @@ dnf:
     - glibc-common
     - dnf
     - git
+    - vim
     - rpm
     - libgomp
     - ultramarine-release-identity-basic
     - fedora-repos
     - ultramarine-langpacks-en
+    - mesa-libGLU
+    - mesa-libxatracker
+    - mesa-vulkan-drivers
+    - mesa-filesystem
+    - mesa-libgbm
+    - mesa-dri-drivers
+    - mesa-libGL
+    - mesa-libEGL
+    - mesa-dxil-libs
+    - mesa-vulkan-drivers
