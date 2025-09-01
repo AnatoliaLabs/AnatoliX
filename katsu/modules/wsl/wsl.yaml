@@ -1,5 +1,11 @@
 builder: dnf
 
+scripts:
+  post:
+    - id: dnf-changes
+      name: Set DNF defaults
+      file: dnf-changes.sh
+
 dnf:
   repodir: ../base/repodir/
   releasever: 42
@@ -24,8 +30,20 @@ dnf:
     - glibc-common
     - dnf
     - git
+    - vim
     - rpm
     - libgomp
     - ultramarine-release-identity-basic
+    - ultramarine-release-wsl
     - fedora-repos
     - ultramarine-langpacks-en
+    - mesa-libGLU
+    - mesa-libxatracker
+    - mesa-vulkan-drivers
+    - mesa-filesystem
+    - mesa-libgbm
+    - mesa-dri-drivers
+    - mesa-libGL
+    - mesa-libEGL
+    - mesa-dxil-libs
+    - mesa-vulkan-drivers
