@@ -1,5 +1,11 @@
 builder: dnf
 
+scripts:
+  post:
+    - id: dnf-changes
+      name: Set DNF defaults
+      file: dnf-changes.sh
+
 dnf:
   repodir: ../base/repodir/
   releasever: 42
