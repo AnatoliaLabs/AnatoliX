@@ -1,3 +1,5 @@
+# DEPRECATED 9/2/25 --jr
+# Remove this file in a future release
 ARG RELEASE
 
 FROM ghcr.io/ultramarine-linux/ultramarine:${RELEASE}
