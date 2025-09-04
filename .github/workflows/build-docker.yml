@@ -162,8 +162,8 @@ jobs:
         docker:
           - dockerfile: dockerfiles/devtools.dockerfile
             image: ghcr.io/ultramarine-linux/ultramarine-devtools
-          - dockerfile: dockerfiles/gitpod.dockerfile
-            image: ghcr.io/ultramarine-linux/ultramarine-gitpod
+          #- dockerfile: dockerfiles/gitpod.dockerfile
+          # image: ghcr.io/ultramarine-linux/ultramarine-gitpod
 
     steps:
       - name: Checkout
