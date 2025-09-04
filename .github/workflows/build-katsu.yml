@@ -237,7 +237,7 @@ jobs:
           iso=$(ls *.iso)
           # append the arch
           mv $iso $(echo $iso | sed "s/.iso/-${{ matrix.arch }}.iso/")
-          
+
           # list the files in the directory after renaming
           ls -lR
 
@@ -259,7 +259,7 @@ jobs:
           - x86_64
           - aarch64
         variant:
-          - wsl/wsl
+          - ports/wsl/wsl
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/terrapkg/builder:f42
@@ -299,7 +299,7 @@ jobs:
           mv katsu-work/chroot.tar katsu-work/${{ env.artifact }}.tar
           # compress tar as zst, output as .tar.zst
           # have an exception for WSL, as it doesn't support zstd
-          if [ "${{ matrix.variant }}" = "wsl/wsl" ]; then
+          if [ "${{ matrix.variant }}" = "ports/wsl/wsl" ]; then
             gzip -9 -c katsu-work/${{ env.artifact }}.tar > katsu-work/${{ env.artifact }}.tar.gz
           else
             zstd -T0 -19 katsu-work/${{ env.artifact }}.tar -o katsu-work/${{ env.artifact }}.tar.zst

@@ -7,7 +7,7 @@ scripts:
       file: dnf-changes.sh
 
 dnf:
-  repodir: ../base/repodir/
+  repodir: ../../base/repodir/
   releasever: 42
   exec: dnf4
   options:
