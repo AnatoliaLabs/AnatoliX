@@ -1,3 +1,3 @@
 # Enable terra-mesa repo stream for updates
 
-dnf5 config-manager setopt terra-mesa.enabled=1
+sed -i '0,/enabled=0/s/enabled=0/enabled=1/' /etc/yum.repos.d/terra-mesa.repo
