@@ -9,7 +9,7 @@ scripts:
 dnf:
   repodir: ../../base/repodir/
   releasever: 42
-  exec: dnf4
+  exec: dnf
   options:
     - --setopt=cachedir=/var/cache/dnf
     - --setopt=keepcache=True

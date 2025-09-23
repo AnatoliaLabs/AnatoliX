@@ -2,7 +2,7 @@ builder: dnf
 
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf
   packages:
     - kernel-surface
     - kernel-surface-core

@@ -21,7 +21,7 @@ scripts:
 
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf
   packages:
     - cros-keyboard-map
     - depthcharge-tools

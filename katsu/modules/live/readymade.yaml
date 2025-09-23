@@ -1,6 +1,6 @@
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf
   exclude:
     # use ultramarine-langpacks
     - langpacks-*
