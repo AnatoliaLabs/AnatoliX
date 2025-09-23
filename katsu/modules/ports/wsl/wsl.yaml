@@ -45,5 +45,5 @@ dnf:
     - mesa-dri-drivers
     - mesa-libGL
     - mesa-libEGL
-    - mesa-dxil-libs
+    - mesa-dxil-devel
     - mesa-vulkan-drivers
