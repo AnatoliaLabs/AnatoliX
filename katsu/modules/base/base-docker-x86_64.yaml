@@ -6,5 +6,5 @@ import:
 
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf
   arch: x86_64

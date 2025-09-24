@@ -5,7 +5,7 @@ scripts:
       file: live.sh
 dnf:
   releasever: 42
-  exec: dnf4
+  exec: dnf
   exclude:
     - fedora-release*
     - generic-release*
