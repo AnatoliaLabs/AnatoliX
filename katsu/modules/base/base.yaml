@@ -65,7 +65,6 @@ dnf:
 #     - kernel-core
 #     - glibc
 #     - glibc-common
-#     - dracut-config-generic
 #     - dracut-tools
 #     - dnf
 #     - dracut

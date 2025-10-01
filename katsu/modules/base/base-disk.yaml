@@ -30,7 +30,6 @@ dnf:
     - kernel
     - glibc
     - glibc-common
-    - dracut-config-generic
     - dracut-tools
     - dnf
     - dracut

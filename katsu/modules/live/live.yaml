@@ -16,9 +16,7 @@ dnf:
     - deepin-wallpapers
   packages:
     - glibc-all-langpacks
-    - dracut-config-generic
     - dracut-live
-    - dracut-config-generic
     - dracut-network
     - dracut-squash
     - libblockdev-nvdimm
