@@ -326,7 +326,7 @@ jobs:
       - live-iso
       - image
       - tar
-    if: github.event_name != 'pull_request'
+    if: always() && github.event_name != 'pull_request'
 
     steps:
       - name: Install dependencies
