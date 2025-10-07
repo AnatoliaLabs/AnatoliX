@@ -61,6 +61,7 @@ touch /.unconfigured
 # This should only trigger on first boot, but on live images it shouldn't
 # because `ConditionKernelCommandLine=!rd.live.image` in the unit file
 systemctl enable taidan-initial-setup-reconfiguration || true
+systemctl enable systemd-timesyncd
 
 
 # Set locales in chroot
