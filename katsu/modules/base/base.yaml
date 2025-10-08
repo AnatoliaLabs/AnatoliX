@@ -34,6 +34,7 @@ dnf:
     - setroubleshoot
     - setroubleshoot-plugins
     - setroubleshoot-server
+    - initial-setup*
   arch_packages:
     aarch64:
       - grub2-efi-aa64
