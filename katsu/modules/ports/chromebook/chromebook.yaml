@@ -27,3 +27,4 @@ dnf:
     - depthcharge-tools
     - vboot-utils
     - submarine
+    - croskbd
