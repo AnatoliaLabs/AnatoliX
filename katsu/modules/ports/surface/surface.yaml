@@ -13,7 +13,7 @@ dnf:
     - iptsd
     - libwacom-surface
     - ultramarine-release-surface
-    - terra-surface-dtx-daemon
+    - surface-dtx-daemon
     # Below for camera support
     - intel-vsc-firmware
     - libcamera
