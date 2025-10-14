@@ -22,9 +22,13 @@ scripts:
 dnf:
   releasever: 42
   exec: dnf
+  options:
+    - --enablerepo=kaibutsu
   packages:
     - cros-keyboard-map
     - depthcharge-tools
     - vboot-utils
     - submarine
     - croskbd
+    - kernel-chromebook
+    - kernel-chromebook-*

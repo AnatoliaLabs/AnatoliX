@@ -3,6 +3,8 @@ builder: dnf
 dnf:
   releasever: 42
   exec: dnf
+  options:
+    - --enablerepo=linux-surface
   packages:
     - kernel-surface
     - kernel-surface-core
