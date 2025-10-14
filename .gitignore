@@ -2,3 +2,5 @@ katsu-work/
 .DS_Store
 *.env*
 .idea
+*.iso
+*.img
