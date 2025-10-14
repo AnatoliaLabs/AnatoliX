@@ -67,14 +67,10 @@ jobs:
           # - ports/chromebook/x86_64/gnome
           # - ports/chromebook/x86_64/plasma
           # - ports/chromebook/x86_64/xfce
-          # - ports/chromebook/mt8183/flagship
-          # - ports/chromebook/mt8183/gnome
-          # - ports/chromebook/mt8183/plasma
-          # - ports/chromebook/mt8183/xfce
-          # - ports/chromebook/mt8192/flagship
-          # - ports/chromebook/mt8192/gnome
-          # - ports/chromebook/mt8192/plasma
-          # - ports/chromebook/mt8192/xfce
+          # - ports/chromebook/mt81/flagship
+          # - ports/chromebook/mt81/gnome
+          # - ports/chromebook/mt81/plasma
+          # - ports/chromebook/mt81/xfce
           # - ports/chromebook/sc7180/flagship
           # - ports/chromebook/sc7180/gnome
           # - ports/chromebook/sc7180/plasma
@@ -90,21 +86,13 @@ jobs:
           - arch: aarch64
             variant: ports/chromebook/x86_64/xfce
           - arch: x86_64
-            variant: ports/chromebook/mt8183/flagship
+            variant: ports/chromebook/mt81/flagship
           - arch: x86_64
-            variant: ports/chromebook/mt8183/gnome
+            variant: ports/chromebook/mt81/gnome
           - arch: x86_64
-            variant: ports/chromebook/mt8183/plasma
+            variant: ports/chromebook/mt81/plasma
           - arch: x86_64
-            variant: ports/chromebook/mt8183/xfce
-          - arch: x86_64
-            variant: ports/chromebook/mt8192/flagship
-          - arch: x86_64
-            variant: ports/chromebook/mt8192/gnome
-          - arch: x86_64
-            variant: ports/chromebook/mt8192/plasma
-          - arch: x86_64
-            variant: ports/chromebook/mt8192/xfce
+            variant: ports/chromebook/mt81/xfce
           - arch: x86_64
             variant: ports/chromebook/sc7180/flagship
           - arch: x86_64
