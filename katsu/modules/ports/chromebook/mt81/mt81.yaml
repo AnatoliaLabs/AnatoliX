@@ -8,8 +8,8 @@ dnf:
   exec: dnf
   arch: aarch64
   packages:
-    - kernel-mt8183
-    - kernel-mt8183-devel
+    - kernel-mt81
+    - kernel-mt81-devel
     - ultramarine-backgrounds
 
 disk:
@@ -23,7 +23,7 @@ disk:
 
     - label: boot
       type: xbootldr
-      size: 1.1GB
+      size: 1.5GB
       filesystem: ext4
       mountpoint: /boot
 
