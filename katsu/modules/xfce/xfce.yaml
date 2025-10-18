@@ -2,7 +2,6 @@ dnf:
   releasever: 42
   exec: dnf
   exclude:
-    - ultramarine-backgrounds-compat
     - "dnfdragora*" # Jade doesn't like this for some reason???
     - dnfdragora-updater
   packages:
