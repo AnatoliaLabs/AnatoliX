@@ -4,6 +4,7 @@ dnf:
   exclude:
     - "dnfdragora*" # Jade doesn't like this for some reason???
     - dnfdragora-updater
+    - desktop-backgrounds-compat
   packages:
     - "@ultramarine-xfce-product-environment"
     - "@ultramarine-xfce-no-flatpak-apps"
