@@ -3,8 +3,10 @@
 echo max_parallel_downloads=20 >> /etc/dnf/dnf.conf
 echo defaultyes=True >> /etc/dnf/dnf.conf
 
+systemctl preset-all
+
 # if aarch64
-	
+
 arch=$(uname -m)
 if [[ $arch == "aarch64" ]]; then
 cp -P /usr/share/uboot/rpi_arm64/u-boot.bin /boot/efi/rpi-u-boot.bin
