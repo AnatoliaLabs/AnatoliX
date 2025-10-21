@@ -1,5 +1,5 @@
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf5
   # packages:
   #   - kiss

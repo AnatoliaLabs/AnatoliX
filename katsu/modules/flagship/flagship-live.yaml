@@ -7,9 +7,9 @@ import:
   - ../live/readymade.yaml
   - flagship.yaml
 
-distro: Ultramarine Linux 42 (Flagship Edition)
+distro: Ultramarine Linux 43 (Flagship Edition)
 
-out_file: ultramarine-flagship-42-live.iso
+out_file: ultramarine-flagship-43-live.iso
 
 bootloader: grub
 
@@ -25,5 +25,5 @@ scripts:
       file: ./flagship-live.sh
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf

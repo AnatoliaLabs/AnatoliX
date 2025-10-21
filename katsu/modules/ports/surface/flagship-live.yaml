@@ -7,9 +7,9 @@ import:
   - ../../flagship/flagship.yaml
   - surface.yaml
 
-distro: Ultramarine Linux 42 (Flagship Edition)
+distro: Ultramarine Linux 43 (Flagship Edition)
 
-out_file: ultramarine-flagship-42-surface.iso
+out_file: ultramarine-flagship-43-surface.iso
 
 bootloader: grub
 
@@ -25,5 +25,5 @@ scripts:
       file: ../../flagship/./flagship-live.sh
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf

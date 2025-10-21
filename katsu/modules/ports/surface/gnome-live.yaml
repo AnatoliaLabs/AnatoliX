@@ -7,9 +7,9 @@ import:
   - ../../gnome/gnome.yaml
   - surface.yaml
 
-distro: Ultramarine GNOME 42
+distro: Ultramarine GNOME 43
 
-out_file: ultramarine-gnome-42-surface.iso
+out_file: ultramarine-gnome-43-surface.iso
 
 bootloader: grub
 
@@ -28,5 +28,5 @@ scripts:
       file: gnome-live-anaconda.sh
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf

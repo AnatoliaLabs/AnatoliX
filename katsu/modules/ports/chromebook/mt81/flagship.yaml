@@ -5,14 +5,14 @@ import:
   - ../../../flagship/flagship.yaml
   - ../../../flagship/base-disk-aarch64.yaml
 
-distro: Ultramarine Linux 42 Flagship (mt8183 Chromebook)
+distro: Ultramarine Linux 43 Flagship (mt8183 Chromebook)
 
-out_file: ultramarine-cbe-mt8183-flagship-42.img
+out_file: ultramarine-cbe-mt8183-flagship-43.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf

@@ -38,15 +38,15 @@ env:
     podman
     buildah
     katsu
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm
 
 on:
   push:
-    branches: ["um42"]
+    branches: ["um43"]
   workflow_dispatch:
   pull_request:
-    branches: ["um42"]
+    branches: ["um43"]
 
 jobs:
   #### BASE IMAGES ####
@@ -103,7 +103,7 @@ jobs:
             variant: ports/chromebook/sc7180/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f42
+      image: ghcr.io/terrapkg/builder:f43
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -182,7 +182,7 @@ jobs:
             variant: ports/surface/xfce-live
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f42
+      image: ghcr.io/terrapkg/builder:f43
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -250,7 +250,7 @@ jobs:
           - ports/wsl/wsl
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f42
+      image: ghcr.io/terrapkg/builder:f43
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -308,7 +308,7 @@ jobs:
   push-image:
     runs-on: arm64-lg
     container:
-      image: ghcr.io/terrapkg/builder:f42
+      image: ghcr.io/terrapkg/builder:f43
     environment: production
     needs:
       - live-iso
@@ -341,7 +341,7 @@ jobs:
             type=$2
 
 
-            IMAGEDIR=images/$type/ultramarine/42/
+            IMAGEDIR=images/$type/ultramarine/43/
             mkdir -p $IMAGEDIR
 
             filename=$(basename -- "$file")

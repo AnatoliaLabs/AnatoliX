@@ -16,7 +16,7 @@ scripts:
       file: terra-mesa.sh
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf
   repodir: repodir
   options:

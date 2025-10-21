@@ -1,5 +1,5 @@
 builder: dnf
-distro: Ultramarine Linux 42
+distro: Ultramarine Linux 43
 
 # users:
 #   - username: ultramarine
@@ -13,7 +13,7 @@ import:
   - base-disk.yaml
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf
   packages:
     - ultramarine-release-identity-basic

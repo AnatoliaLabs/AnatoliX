@@ -1,5 +1,5 @@
 builder: dnf
-distro: Ultramarine Linux 42 (Plasma Edition)
+distro: Ultramarine Linux 43 (Plasma Edition)
 
 # users:
 #   - username: ultramarine
@@ -45,6 +45,6 @@ disk:
       mountpoint: /
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf
   arch: aarch64

@@ -5,14 +5,14 @@ import:
   - ../../../xfce/xfce-live.yaml
   - ../../../xfce/base-disk-x86_64.yaml
 
-distro: Ultramarine Linux 42 Xfce (Chromebook Edition)
+distro: Ultramarine Linux 43 Xfce (Chromebook Edition)
 
-out_file: ultramarine-cbe-xfce-42.img
+out_file: ultramarine-cbe-xfce-43.img
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 dnf:
-  releasever: 42
+  releasever: 43
   exec: dnf
