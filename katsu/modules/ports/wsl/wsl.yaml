@@ -41,7 +41,7 @@ dnf:
     - fedora-repos
     - ultramarine-langpacks-en
     - mesa-libGLU
-    - mesa-libxatracker
+    - mesa-compat-libxatracker
     - mesa-vulkan-drivers
     - mesa-filesystem
     - mesa-libgbm
