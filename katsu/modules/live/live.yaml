@@ -14,6 +14,7 @@ dnf:
     - device-mapper-multipath
     - gnome-boxes
     - deepin-wallpapers
+    - pipewire-codec-aptx # somehow pulled in but not required by anything?
   packages:
     - glibc-all-langpacks
     - dracut-live
