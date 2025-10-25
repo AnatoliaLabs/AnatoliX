@@ -4,7 +4,6 @@ dnf:
   exclude:
     # use ultramarine-langpacks
     - langpacks-*
-    - default-fonts-*
     # remove broken imsettings
     - im-chooser
     # Experiementally remove the following packages
