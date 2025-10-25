@@ -6,6 +6,8 @@ scripts:
 dnf:
   releasever: 43
   exec: dnf
+  options:
+    - --skip-unavailable
   exclude:
     - fedora-release*
     - generic-release*
