@@ -12,8 +12,8 @@ dnf:
     - qemu*
   packages:
     # for testing purposes only, revert back to readymade before merge
-    - readymade-nightly
-    - readymade-nightly-config-ultramarine
+    - readymade-git
+    - readymade-git-config-ultramarine
     # -readymade
     - taidan
     - ultramarine-langpacks-core-en
