@@ -103,7 +103,7 @@ jobs:
             variant: ports/chromebook/sc7180/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f43
+      image: ghcr.io/fyralabs/katsu-cache:main
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -111,11 +111,6 @@ jobs:
       options: --privileged -v /dev:/dev
 
     steps:
-      - name: Install dependencies
-        run: |
-          dnf up -y
-          dnf install -y $DNF_PKGS
-          dnf clean all
       - name: Checkout
         uses: actions/checkout@v4
       - name: sanitize artifact name
@@ -182,7 +177,7 @@ jobs:
             variant: ports/surface/xfce-live
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f43
+      image: ghcr.io/fyralabs/katsu-cache:main
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -190,11 +185,6 @@ jobs:
       options: --privileged -v /dev:/dev
 
     steps:
-      - name: Install dependencies
-        run: |
-          dnf up -y
-          dnf install -y $DNF_PKGS
-          dnf clean all
       - name: sanitize artifact name
         run: |
           name=$(echo ${{ matrix.variant }} | sed 's/\//-/g')
@@ -250,18 +240,13 @@ jobs:
           - ports/wsl/wsl
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/terrapkg/builder:f43
+      image: ghcr.io/fyralabs/katsu-cache:main
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
       # I'm sorry.
       options: --privileged -v /dev:/dev
     steps:
-      - name: Install dependencies
-        run: |
-          dnf up -y
-          dnf install -y $DNF_PKGS
-          dnf clean all
       - name: Checkout
         uses: actions/checkout@v4
       - name: sanitize artifact name
