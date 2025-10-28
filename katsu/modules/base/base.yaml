@@ -53,32 +53,12 @@ dnf:
       - grub2-pc-modules
       - shim-x64
       - shim-unsigned-x64
-    packages:
-#     - filesystem
-#     - setup
-#     - lvm2
-#     - btrfs-progs
-#     - dmraid
-#     - nvme-cli
-#     - kernel
-#     - kernel-devel
-#     - kernel-modules
-#     - kernel-core
-#     - glibc
-#     - glibc-common
-#     - dracut-tools
-#     - dnf
-#     - dracut
-#     - "@core"
-#     - grub2-tools
-#     - "@hardware-support"
-#     - NetworkManager
-#     - rpm
-#     - libgomp
-#     # - ultramarine-release-identity-basic
-#     - fedora-repos
-#     - efibootmgr
-      - ultramarine-release-common
-      - ultramarine-release
-      - ultramarine-repos
-      - ultramarine-logos
+  packages:
+    # because dracut just doesn't like it if it's not there
+    # plus iSCSI is useful sometimes
+    - iscsi-initiator-utils
+    - libiscsi-utils
+    - ultramarine-release-common
+    - ultramarine-release
+    - ultramarine-repos
+    - ultramarine-logos
