@@ -4,7 +4,6 @@ dnf:
   exclude:
     - budgie-desktop-defaults
     - budgie-backgrounds
-    - papirus-icon-theme
     
   packages:
     - "@ultramarine-flagship-product-environment"
