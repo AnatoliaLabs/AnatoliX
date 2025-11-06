@@ -1,7 +1,14 @@
 #!/bin/bash -x
 
-echo max_parallel_downloads=20 >> /etc/dnf/dnf.conf
-echo defaultyes=True >> /etc/dnf/dnf.conf
+# Set DNF defaults in libdnf config instead of dnf.conf
+mkdir -p /usr/share/dnf5/libdnf.conf.d/
+
+echo max_parallel_downloads=20 >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
+echo defaultyes=True >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
+
+
+# Set default timezone to UTC
+ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # if aarch64
 	
