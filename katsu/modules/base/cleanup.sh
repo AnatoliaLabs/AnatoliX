@@ -2,7 +2,7 @@
 
 # Set DNF defaults in libdnf config instead of dnf.conf
 mkdir -p /usr/share/dnf5/libdnf.conf.d/
-
+echo "[main]" > /usr/share/dnf5/libdnf.conf.d/50-default.conf
 echo max_parallel_downloads=20 >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
 echo defaultyes=True >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
 
@@ -11,7 +11,7 @@ echo defaultyes=True >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
 # if aarch64
-	
+
 arch=$(uname -m)
 if [[ $arch == "aarch64" ]]; then
 cp -P /usr/share/uboot/rpi_arm64/u-boot.bin /boot/efi/rpi-u-boot.bin
