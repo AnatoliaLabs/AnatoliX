@@ -2,9 +2,11 @@
 
 # Set DNF defaults in libdnf config instead of dnf.conf
 mkdir -p /usr/share/dnf5/libdnf.conf.d/
-echo "[main]" > /usr/share/dnf5/libdnf.conf.d/50-default.conf
-echo max_parallel_downloads=20 >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
-echo defaultyes=True >> /usr/share/dnf5/libdnf.conf.d/50-default.conf
+cat >> /usr/share/dnf5/libdnf.conf.d/50-default.conf << 'EOF'
+[main]
+max_parallel_downloads=20
+defaultyes=True
+EOF
 
 
 # Set default timezone to UTC
