@@ -210,7 +210,7 @@ jobs:
         run: |
           df -h
           # Wipe stuff in our host /usr to make some space
-          
+
           # We don't need the android SDK
           rm -rf /hostusr/local/lib/android
           # We're a Rust shop, not a Haskell shop
@@ -218,12 +218,13 @@ jobs:
           rm -rf /hostfs/opt/ghc
           # We don't even use .NET
           rm -rf /hostusr/share/dotnet
+          # We don't need CodeQL in this action
+          rm -rf /opt/hostedtoolcache/CodeQL
 
-          
+
           echo "After cleanup:"
           df -h
 
-          
       - name: ${{ env.KATSU_BUILD_TASK_NAME }}
         run: |
           # loop device fix
