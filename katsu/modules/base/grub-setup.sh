@@ -33,13 +33,12 @@ configfile \$prefix/grub.cfg
 EOF
 
 # -v will fill up the logs and make it hard to debug
-dracut -fN --add-drivers "virtio virtio_blk virtio_scsi xchi_pci mmc" --regenerate-all
+dracut -fN --add-drivers "virtio virtio_blk virtio_scsi mmc" --regenerate-all
 
 arch=$(uname -m)
 if [[ $arch == "aarch64" ]]; then
 cp -P /usr/share/uboot/rpi_arm64/u-boot.bin /boot/efi/rpi-u-boot.bin
-cp -P /usr/share/uboot/rpi_3/u-boot.bin /boot/efi/rpi3-u-boot.bin
-cp -P /usr/share/uboot/rpi_4/u-boot.bin /boot/efi/rpi4-u-boot.bin
+cp -P /usr/share/uboot/pinebook-pro-rk3399/u-boot.bin /boot/efi/pinebook-pro-u-boot.bin
 fi
 rm -f /var/lib/systemd/random-seed
 rm -f /etc/NetworkManager/system-connections/*.nmconnection

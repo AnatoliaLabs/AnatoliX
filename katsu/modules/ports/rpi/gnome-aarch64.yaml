@@ -1,0 +1,18 @@
+builder: dnf
+
+import:
+  - rpi.yaml
+  - ../../gnome/gnome.yaml
+  - ../../gnome/base-disk-aarch64.yaml
+
+distro: Ultramarine Linux 43 GNOME (Raspberry Pi)
+
+out_file: ultramarine-rpi-gnome-43.img
+
+bootloader: grub
+
+kernel_cmdline: "quiet rhgb"
+
+dnf:
+  releasever: 43
+  exec: dnf
