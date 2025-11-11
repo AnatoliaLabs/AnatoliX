@@ -171,7 +171,7 @@ jobs:
           # We don't even use .NET
           rm -rf /hostusr/share/dotnet
           # We don't need CodeQL in this action
-          rm -rf /opt/hostedtoolcache/CodeQL
+          rm -rf /hostfs/opt/hostedtoolcache/CodeQL
 
 
           echo "After cleanup:"
