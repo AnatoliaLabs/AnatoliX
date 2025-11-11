@@ -20,6 +20,9 @@ scripts:
     - id: grub
       name: Set up GRUB
       file: ../base/grub-setup.sh
+    - id: uboot
+      name: Set up uboot
+      file: ../base/uboot.sh
 
 disk:
   size: 16GB

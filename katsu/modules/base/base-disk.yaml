@@ -59,6 +59,8 @@ dnf:
       - bcm283x-firmware
       - bcm283x-overlays
       - "@arm-tools"
+      - uboot-images-armv8
+
     x86_64:
       - grub2-efi-x64
       - grub2-efi-x64-modules
