@@ -14,6 +14,9 @@ dnf:
     - device-mapper-multipath
     - gnome-boxes
     - deepin-wallpapers
+    - pipewire-codec-aptx # somehow pulled in but not required by anything?
+    - gstreamer1-plugins-ugly-1:1.26.7-1.fc43.x86_64
+    - gstreamer1-plugins-ugly-1:1.26.7-1.fc43.aarch64
   packages:
     - glibc-all-langpacks
     - dracut-live

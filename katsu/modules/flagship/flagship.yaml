@@ -4,6 +4,7 @@ dnf:
   exclude:
     - budgie-desktop-defaults
     - budgie-backgrounds
+    
   packages:
     - "@ultramarine-flagship-product-environment"
     - "@ultramarine-flagship-no-flatpak-apps"
