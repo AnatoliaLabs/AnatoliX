@@ -1,6 +1,6 @@
 dnf:
   releasever: 43
-  exec: dnf4
+  exec: dnf5
   packages:
     #beta - still need to set up our own comps
     - "@ultramarine-plasma-product-environment"

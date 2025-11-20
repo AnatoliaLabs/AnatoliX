@@ -6,6 +6,6 @@ scripts:
 
 dnf:
   releasever: 43
-  exec: dnf4
+  exec: dnf5
   packages:
     - "@default-flatpak-support"
