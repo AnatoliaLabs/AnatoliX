@@ -1,9 +1,10 @@
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf4
   exclude:
     - budgie-desktop-defaults
     - budgie-backgrounds
+    
   packages:
     - "@ultramarine-flagship-product-environment"
     - "@ultramarine-flagship-no-flatpak-apps"

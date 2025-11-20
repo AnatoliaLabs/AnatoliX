@@ -26,4 +26,4 @@ iso:
 
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf4

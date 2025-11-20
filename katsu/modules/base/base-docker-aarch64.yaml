@@ -6,5 +6,5 @@ import:
 
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf4
   arch: aarch64
