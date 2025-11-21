@@ -13,7 +13,7 @@ dnf install katsu
 ## Building an ISO image
 
 ```bash
-katsu -o iso katsu/modules/flagship/flagship-live.yaml
+katsu -o iso katsu/modules/budgie/budgie-live.yaml
 ```
 
 ## Building a preinstalled image

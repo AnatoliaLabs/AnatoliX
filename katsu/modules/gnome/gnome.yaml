@@ -1,6 +1,6 @@
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf5
   packages:
     - "@ultramarine-gnome-product-environment"
     - "@ultramarine-gnome-no-flatpak-apps"
@@ -8,4 +8,3 @@ dnf:
     - ultramarine-release-identity-gnome
   exclude:
     - gnome-initial-setup
-

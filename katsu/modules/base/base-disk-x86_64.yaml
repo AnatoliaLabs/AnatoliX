@@ -14,7 +14,7 @@ import:
 
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf5
   packages:
     - ultramarine-release-identity-basic
 

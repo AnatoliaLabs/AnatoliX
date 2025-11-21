@@ -15,4 +15,4 @@ kernel_cmdline: "quiet rhgb"
 
 dnf:
   releasever: 43
-  exec: dnf
+  exec: dnf5
