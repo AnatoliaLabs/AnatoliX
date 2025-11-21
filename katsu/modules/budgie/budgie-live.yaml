@@ -5,7 +5,7 @@ import:
   - ../live/live.yaml
   - ../base/desktop.yaml
   - ../live/readymade.yaml
-  - flagship.yaml
+  - budgie.yaml
 
 distro: Ultramarine Linux 43 (Budgie Edition)
 

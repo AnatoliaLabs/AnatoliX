@@ -13,7 +13,7 @@ dnf install katsu
 Run Katsu on manifest
 
 ```bash
-katsu -o iso katsu/modules/flagship/flagship-live.yaml
+katsu -o iso katsu/modules/budgie/budgie-live.yaml
 ```
 
 ## Ultramarine Linux Docker/OCI image
