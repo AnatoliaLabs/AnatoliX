@@ -7,22 +7,22 @@ import:
   - ../live/readymade.yaml
   - flagship.yaml
 
-distro: Ultramarine Linux 43 (Flagship Edition)
+distro: Ultramarine Linux 43 (Budgie Edition)
 
-out_file: ultramarine-flagship-43-live.iso
+out_file: ultramarine-budgie-43-live.iso
 
 bootloader: grub
 
 kernel_cmdline: "quiet rhgb"
 
 iso:
-  volume_id: UM-Flagship-Live
+  volume_id: UM-Budgie-Live
 
 scripts:
   post:
-    - id: flagship-live
-      name: Set up Flagship Live
-      file: ./flagship-live.sh
+    - id: budgie-live
+      name: Set up Budgie Live
+      file: ./budgie-live.sh
 
 dnf:
   releasever: 43

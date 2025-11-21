@@ -1,5 +1,5 @@
 builder: dnf
-distro: Ultramarine Linux 43 (Flagship Edition)
+distro: Ultramarine Linux 43 (Budgie Edition)
 
 # users:
 #   - username: ultramarine
@@ -12,7 +12,7 @@ import:
   - ../base/base.yaml
   - ../base/base-disk.yaml
   - ../base/desktop.yaml
-  - flagship.yaml
+  - budgie.yaml
 
 scripts:
   post:
