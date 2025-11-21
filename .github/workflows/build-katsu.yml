@@ -65,7 +65,7 @@ jobs:
             variant: ports/chromebook/sc7180/xfce
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/fyralabs/katsu:v0.10.3
+      image: ghcr.io/fyralabs/katsu:0.10.3
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -139,7 +139,7 @@ jobs:
             variant: ports/surface/xfce-live
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/fyralabs/katsu:v0.10.3
+      image: ghcr.io/fyralabs/katsu:0.10.3
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -221,7 +221,7 @@ jobs:
           - ports/wsl/wsl
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
-      image: ghcr.io/fyralabs/katsu:v0.10.3
+      image: ghcr.io/fyralabs/katsu:0.10.3
       # Pass /dev from host to container
       # Very hacky, but it works
       # Microsoft/Github, if you're reading this,
@@ -274,7 +274,7 @@ jobs:
   push-image:
     runs-on: arm64-lg
     container:
-      image: ghcr.io/fyralabs/katsu:v0.10.3
+      image: ghcr.io/fyralabs/katsu:0.10.3
     environment: production
     needs:
       - live-iso
