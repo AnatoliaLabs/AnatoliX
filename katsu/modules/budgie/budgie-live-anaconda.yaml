@@ -22,7 +22,7 @@ scripts:
   post:
     - id: budgie-live
       name: Set up Budgie Live
-      file: ./Budgie-live.sh
+      file: ./budgie-live.sh
     - id: budgie-live-anaconda
       name: Set up Budgie Live (for Anaconda)
       file: ./budgie-live-anaconda.sh
