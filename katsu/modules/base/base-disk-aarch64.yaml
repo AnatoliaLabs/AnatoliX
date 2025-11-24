@@ -27,6 +27,9 @@ scripts:
       priority: 60
       name: Set default target to multi-user
       file: default-target.sh
+    - id: u-boot
+      name: Install RPi and Pinebook Pro U-Boot
+      file: uboot.sh
 
 disk:
   size: 10GB
