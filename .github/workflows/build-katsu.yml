@@ -38,6 +38,10 @@ jobs:
           # - ports/chromebook/sc7180/plasma
           # - ports/chromebook/sc7180/xfce
           # TODO: figure out how to get loop devices to work on our ARM runners
+          - ports/rpi5/budgie
+          - ports/rpi5/gnome
+          - ports/rpi5/plasma
+          - ports/rpi5/xfce
         exclude:
           - arch: aarch64
             variant: ports/chromebook/x86_64/budgie
