@@ -7,6 +7,4 @@ dnf:
   packages:
     - kernel-rpi5
     - kernel-rpi5-devel
-    - kernel-core-rpi5
-    - kernel-modules-rpi5
     - ultramarine-backgrounds
