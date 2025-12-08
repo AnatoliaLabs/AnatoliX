@@ -67,6 +67,14 @@ jobs:
             variant: ports/chromebook/sc7180/plasma
           - arch: x86_64
             variant: ports/chromebook/sc7180/xfce
+          - arch: x86_64
+            variant: ports/rpi5/plasma
+          - arch: x86_64
+            variant: ports/rpi5/gnome
+          - arch: x86_64
+            variant: ports/rpi5/xfce
+          - arch: x86_64
+            variant: ports/rpi5/budgie
     runs-on: ${{ matrix.arch == 'x86_64' && 'ubuntu-latest' || 'ubuntu-22.04-arm' }}
     container:
       image: ghcr.io/fyralabs/katsu:0.10.3
