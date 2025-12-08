@@ -92,7 +92,7 @@ jobs:
 
       - name: ${{ env.KATSU_BUILD_TASK_NAME }}
         run: |
-          rm -rf /etc/rpm/macros.image-language-conf
+          # rm -rf /etc/rpm/macros.image-language-conf
           chcon system_u:object_r:install_exec_t:s0 "$(which katsu)"
           pushd katsu
           KATSU_LOG=trace katsu -X squashfs-comp="-comp xz -Xcompression-level 9" -v --output=disk-image "modules/${{ matrix.variant }}-${{ matrix.arch }}.yaml"
