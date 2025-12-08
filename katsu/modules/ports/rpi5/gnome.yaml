@@ -2,8 +2,8 @@ builder: dnf
 
 import:
   - rpi5.yaml
-  - ../../../gnome/gnome.yaml
-  - ../../../gnome/base-disk-aarch64.yaml
+  - ../../gnome/gnome.yaml
+  - ../../gnome/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 43 GNOME (Raspberry Pi 5)
 

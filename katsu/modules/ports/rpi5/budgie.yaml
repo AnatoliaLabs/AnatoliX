@@ -2,8 +2,8 @@ builder: dnf
 
 import:
   - rpi5.yaml
-  - ../../../budgie/budgie.yaml
-  - ../../../budgie/base-disk-aarch64.yaml
+  - ../../budgie/budgie.yaml
+  - ../../budgie/base-disk-aarch64.yaml
 
 distro: Ultramarine Linux 43 Budgie (Raspberry Pi 5)
 
