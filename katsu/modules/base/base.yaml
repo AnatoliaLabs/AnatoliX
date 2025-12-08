@@ -63,7 +63,6 @@ dnf:
     # plus iSCSI is useful sometimes
     - iscsi-initiator-utils
     - libiscsi-utils
-    - nano
     - ultramarine-release-common
     - ultramarine-release
     - ultramarine-repos
