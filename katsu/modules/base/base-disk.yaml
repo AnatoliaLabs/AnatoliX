@@ -41,6 +41,7 @@ dnf:
     - "@hardware-support"
     - NetworkManager
     - rpm
+    - nano
     - libgomp
     - fedora-repos
     - efibootmgr
