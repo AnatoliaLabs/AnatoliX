@@ -334,7 +334,7 @@ jobs:
 
       - name: Upload to R2
         run: |
-          wget https://dl.min.io/client/mc/release/linux-arm64/mc
+          wget https://dl.min.io/client/mc/release/linux-amd64/mc
           chmod +x ./mc
           ./mc alias set r2 '${{ secrets.S3_ENDPOINT }}' '${{ secrets.S3_KEY_ID }}' '${{ secrets.S3_SECRET_KEY }}'
           ./mc mirror --overwrite images 'r2/images'
