@@ -2,7 +2,7 @@
 
 This repository contains scripts and configuration files for building the Ultramarine Linux images.
 
-## Dependancies
+## Dependencies
 
 Install Katsu from [terra](https://github.com/terrapkg/packages)
 
