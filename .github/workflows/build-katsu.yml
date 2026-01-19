@@ -25,10 +25,10 @@ jobs:
           - gnome/base-disk
           - plasma/base-disk
           - xfce/base-disk
-          - ports/chromebook/x86_64/budgie
-          - ports/chromebook/x86_64/gnome
-          - ports/chromebook/x86_64/plasma
-          - ports/chromebook/x86_64/xfce
+          # - ports/chromebook/x86_64/budgie
+          # - ports/chromebook/x86_64/gnome
+          # - ports/chromebook/x86_64/plasma
+          # - ports/chromebook/x86_64/xfce
           # - ports/chromebook/mt81/budgie
           # - ports/chromebook/mt81/gnome
           # - ports/chromebook/mt81/plasma
@@ -124,10 +124,10 @@ jobs:
           - gnome/gnome-live-anaconda
           - plasma/plasma-live-anaconda
           - xfce/xfce-live-anaconda
-          # - ports/chromebook/x86_64/budgie
-          # - ports/chromebook/x86_64/gnome
-          # - ports/chromebook/x86_64/plasma
-          # - ports/chromebook/x86_64/xfce
+          - ports/chromebook/x86_64/budgie
+          - ports/chromebook/x86_64/gnome
+          - ports/chromebook/x86_64/plasma
+          - ports/chromebook/x86_64/xfce
         exclude:
           - arch: aarch64
             variant: ports/surface/budgie-live
@@ -201,13 +201,21 @@ jobs:
           ls -lR
 
           rm -rf katsu-work/
+
+          if echo "${{ matrix.variant }}" | grep -q "^ports/chromebook/"; then
+            iso=$(ls *.iso)
+            ./modules/ports/chromebook/impregnate.py /usr/share/submarine/submarine.kpart *.iso "${iso%.*}.img"
+          fi
+
           popd
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.artifact }}-iso
-          path: katsu/*.iso
+          path: |
+            katsu/*.iso
+            katsu/*.img
           compression-level: 0
 
   tar:
