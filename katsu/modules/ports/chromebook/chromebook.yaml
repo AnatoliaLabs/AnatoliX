@@ -18,6 +18,6 @@ dnf:
     - vboot-utils
     - submarine
     - croskbd
-    - alsa-ucm-cros
+    # - alsa-ucm-cros
     # - kernel-chromebook
     # - kernel-chromebook-headers
