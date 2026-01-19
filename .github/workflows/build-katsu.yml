@@ -179,6 +179,11 @@ jobs:
 
       - name: ${{ env.KATSU_BUILD_TASK_NAME }}
         run: |
+          if echo "${{ matrix.variant }}" | grep -q "^ports/chromebook/"; then
+            dnf install -y submarine python3-pip
+            pip3 install gpt-image
+          fi
+
           # loop device fix
           if [ "$(df -T /dev | tail -1 |cut -f 1 -d ' ')" = "tmpfs" ]; then
             mount -t devtmpfs none /dev
