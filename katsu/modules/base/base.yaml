@@ -16,7 +16,7 @@ scripts:
       file: terra-mesa.sh
 
 dnf:
-  releasever: 43
+  releasever: rawhide
   exec: dnf5
   repodir: repodir
   options:

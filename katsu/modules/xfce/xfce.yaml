@@ -1,5 +1,5 @@
 dnf:
-  releasever: 43
+  releasever: rawhide
   exec: dnf5
   exclude:
     - "dnfdragora*" # Jade doesn't like this for some reason???

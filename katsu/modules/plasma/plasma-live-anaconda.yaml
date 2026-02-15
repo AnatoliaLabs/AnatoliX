@@ -7,9 +7,9 @@ import:
   - ../live/anaconda.yaml
   - plasma.yaml
 
-distro: Ultramarine Linux 43 (Plasma Edition)
+distro: Ultramarine Linux Cheetah (Plasma Edition)
 
-out_file: ultramarine-plasma-43-live-anaconda.iso
+out_file: ultramarine-plasma-rawhide-live-anaconda.iso
 
 scripts:
   post:
@@ -28,5 +28,5 @@ iso:
   volume_id: UM-Kd-Live-Anaconda
 
 dnf:
-  releasever: 43
+  releasever: rawhide
   exec: dnf5

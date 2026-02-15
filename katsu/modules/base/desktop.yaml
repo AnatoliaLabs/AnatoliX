@@ -5,7 +5,7 @@ scripts:
     #   file: polycrystal.sh
 
 dnf:
-  releasever: 43
+  releasever: rawhide
   exec: dnf5
   packages:
     - "@default-flatpak-support"

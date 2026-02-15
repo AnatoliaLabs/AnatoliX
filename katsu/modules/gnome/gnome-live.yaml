@@ -7,9 +7,9 @@ import:
   - ../live/readymade.yaml
   - gnome.yaml
 
-distro: Ultramarine GNOME 43
+distro: Ultramarine Linux Cheetah (GNOME Edition)
 
-out_file: ultramarine-gnome-43-live.iso
+out_file: ultramarine-gnome-rawhide-live.iso
 
 bootloader: grub
 
@@ -25,5 +25,5 @@ scripts:
       file: gnome-live.sh
 
 dnf:
-  releasever: 43
+  releasever: rawhide
   exec: dnf5

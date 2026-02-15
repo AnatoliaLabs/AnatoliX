@@ -49,7 +49,7 @@ systemctl disable systemd-networkd-wait-online
 systemctl disable openvpn-client@\*.service
 systemctl disable openvpn-server@\*.service
 
-# END options from upstream https://pagure.io/fedora-kickstarts/blob/f43/f/fedora-live-base.ks
+# END options from upstream https://pagure.io/fedora-kickstarts/blob/frawhide/f/fedora-live-base.ks
 
 # Remove machine-id on pre generated images
 rm -f /etc/machine-id
